@@ -6,7 +6,6 @@ class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
 
-
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -28,7 +27,6 @@ class HomePage extends StatelessWidget {
     );
   }
 }
-
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key, required this.title}) : super(key: key);
 
