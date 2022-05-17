@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:ui_flutter/screens/login/login_screen.dart';
 import 'package:ui_flutter/config/palette.dart';
 
 
-class LoginSignUpScreen extends StatelessWidget {
+class LoginSignUpScreen extends StatefulWidget{
+  @override
+  _LoginSignUpScreenState createState() => _LoginSignUpScreenState();
+}
+
+class _LoginSignUpScreenState {
   @override
   Widget build(BuildContext context) {
     bool isSignUpScreen = true;
@@ -20,33 +24,33 @@ class LoginSignUpScreen extends StatelessWidget {
               Positioned(
                   top:0,
                   child:Container(
-                    height: 300,
-                    decoration: BoxDecoration(
-                      color: Colors.black,
-                      image:DecorationImage(
-                        image: AssetImage("images/background.jpg"),
-                        fit: BoxFit.fill,
+                      height: 300,
+                      decoration: BoxDecoration(
+                          color: Colors.black,
+                          image:DecorationImage(
+                            image: AssetImage("images/background.jpg"),
+                            fit: BoxFit.fill,
 
-                      )
-                    ),
-                    child: Container(
-                      padding: EdgeInsets.only(top: 90,left: 20),
-                      color: Color(0xFF3b5999).withOpacity(.85),
-                      child: Column(
-                        children: [
-                          RichText(
-                            text: TextSpan(
-                              text: 'Welcome to Reddit',
-                              style: TextStyle(
-                                fontSize: 25,
-                                color: Colors.yellow[700],
-                                fontWeight: FontWeight.bold,
-                              ),
+                          )
+                      ),
+                      child: Container(
+                          padding: EdgeInsets.only(top: 90,left: 20),
+                          color: Color(0xFF3b5999).withOpacity(.85),
+                          child: Column(
+                            children: [
+                              RichText(
+                                  text: TextSpan(
+                                    text: 'Welcome to Reddit',
+                                    style: TextStyle(
+                                      fontSize: 25,
+                                      color: Colors.yellow[700],
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  )
                               )
-                            )
-                        ],
+                            ],
+                          )
                       )
-                    )
                   )
               )
             ],
