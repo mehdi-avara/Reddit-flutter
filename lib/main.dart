@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(const MyApp());
 }
-//check if the commit was correct
 
 class MyApp extends StatelessWidget {
 
