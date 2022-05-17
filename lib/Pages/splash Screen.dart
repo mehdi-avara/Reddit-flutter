@@ -18,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
   _navigateToHome()async{
     await Future.delayed(Duration(seconds: 3), () {});
-    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => MyHomePage(title: "hello")));
+    // Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => MyHomePage(title: "hello")));
   }
 
 
@@ -30,7 +30,11 @@ class _SplashScreenState extends State<SplashScreen> {
       body: Center(
         child: Column(
           children: [
-            Image(image: AssetImage('assets/images/logo.png'),),
+            Container(
+              height: MediaQuery.of(context).size.height * 0.5,
+              width: MediaQuery.of(context).size.width * 0.5,
+              child: Image.asset('assets/images/logo.png'),
+            ),
             Text('Splash Screen', style: TextStyle(
               fontSize: 30,
               fontWeight: FontWeight.bold,
