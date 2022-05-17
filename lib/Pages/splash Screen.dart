@@ -32,8 +32,8 @@ class _SplashScreenState extends State<SplashScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              height: MediaQuery.of(context).size.height * 0.5,
-              width: MediaQuery.of(context).size.width * 0.5,
+              height: MediaQuery.of(context).size.height * 0.1,
+              width: MediaQuery.of(context).size.width * 0.1,
               child: Image.asset('assets/images/logo.png'),
             ),
             Text('Splash Screen', style: TextStyle(
