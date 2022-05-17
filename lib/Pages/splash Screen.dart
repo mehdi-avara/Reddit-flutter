@@ -36,8 +36,8 @@ class _SplashScreenState extends State<SplashScreen> {
               width: MediaQuery.of(context).size.width * 0.1,
               child: Image.asset('assets/images/logo.png'),
             ),
-            Text('Splash Screen', style: TextStyle(
-              fontSize: 30,
+            Text('Reddit', style: TextStyle(
+              fontSize: MediaQuery.of(context).size.height * 0.03,
               fontWeight: FontWeight.bold,
               color: Colors.black,
             ),
