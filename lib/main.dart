@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Reddit',
 
+
       theme: ThemeData(
         // This is the theme of your application.
         //
