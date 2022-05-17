@@ -5,7 +5,7 @@ import 'package:ui_flutter/screens/login/login_screen.dart';
 
 void main() {
   runApp(const App());
-  runApp(LoginPage());
+  // runApp(LoginPage());
 }
 class LoginSignUpUI extends StatelessWidget {
   const LoginSignUpUI ({Key key}) : super(key: key);
@@ -18,7 +18,7 @@ class LoginSignUpUI extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: LoginSignUpPage(),
+      // home: LoginSignUpPage(),
     );
   }
 }
