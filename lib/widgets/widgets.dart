@@ -14,7 +14,14 @@ class HomeWidget extends StatelessWidget {
       child: Column(
         children: <Widget>[
           ListTile(
-            leading: Icon(Icons.home),
+            leading: CircleAvatar(
+              radius: MediaQuery.of(context).size.height *0.10,
+              backgroundColor: Colors.grey[850],
+              child: Icon(
+                Icons.person,
+                color: Colors.white,
+              ),
+            ),
             title: Text('community'),
             subtitle: Text('user'),
             trailing: Icon(Icons.more_vert),
