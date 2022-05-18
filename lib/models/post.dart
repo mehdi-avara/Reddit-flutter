@@ -1,3 +1,4 @@
+import 'package:ui_flutter/models/comment.dart';
 import 'package:ui_flutter/models/community.dart';
 import 'package:ui_flutter/models/user.dart';
 
@@ -8,7 +9,7 @@ class post{
   List<String> _imageUrl;
   User _user;
   Community _community;
-
+  List<Comment> _comments;
   String get postId => _postId;
 
   Community get community => _community;
@@ -43,5 +44,11 @@ class post{
 
   set title(String value) {
     _title = value;
+  }
+
+  List<Comment> get comments => _comments;
+
+  set comments(List<Comment> value) {
+    _comments = value;
   }
 }
