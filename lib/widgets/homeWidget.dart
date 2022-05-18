@@ -47,8 +47,8 @@ class homeWidget{
   static Container _postPart(String Title,String description){
     return Container(
       child: ListTile(
-        title: Text(Title,style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
-        subtitle: Text(description,style: TextStyle(fontSize: 15),),
+        title: Text(Title,style: TextStyle(fontSize: themeSizes.communityName,fontWeight: FontWeight.bold),),
+        subtitle: Text(description,style: TextStyle(fontSize: themeSizes.userName,),),
       ),
       );
   }
@@ -69,7 +69,7 @@ class homeWidget{
         title: Text(title,
           style: TextStyle(
             fontSize: themeSizes.communityName,
-            fontWeight: FontWeight.bold,
+            // fontWeight: FontWeight.bold,
             color: Palette.textColor1,
           ),
         ),
