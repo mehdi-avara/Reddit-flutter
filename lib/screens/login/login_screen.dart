@@ -3,9 +3,9 @@ import 'package:ui_flutter/config/palette.dart';
 
 
 class LoginSignUpScreen extends StatefulWidget{
-  @override
-  _LoginSignUpScreenState createState() => _LoginSignUpScreenState();
-}
+   @override
+   _LoginSignUpScreenState createState() => _LoginSignUpScreenState();
+ }
 
 class _LoginSignUpScreenState {
   @override
