@@ -3,11 +3,11 @@ import 'package:ui_flutter/config/palette.dart';
 
 
 class LoginSignUpScreen extends StatefulWidget{
-   @override
-   _LoginSignUpScreenState createState() => _LoginSignUpScreenState();
- }
+  @override
+  State<LoginSignUpScreen> createState() => _LoginSignUpScreenState();
+}
 
-class _LoginSignUpScreenState {
+class _LoginSignUpScreenState extends State<LoginSignUpScreen>{
   @override
   Widget build(BuildContext context) {
     bool isSignUpScreen = true;
@@ -23,12 +23,14 @@ class _LoginSignUpScreenState {
             children: [
               Positioned(
                   top:0,
+                  right: 0,
+                  left: 0,
                   child:Container(
                       height: 300,
                       decoration: BoxDecoration(
                           color: Colors.black,
                           image:DecorationImage(
-                            image: AssetImage("images/background.jpg"),
+                            image: AssetImage("assets/images/background.jpg"),
                             fit: BoxFit.fill,
 
                           )
@@ -40,14 +42,36 @@ class _LoginSignUpScreenState {
                             children: [
                               RichText(
                                   text: TextSpan(
-                                    text: 'Welcome to Reddit',
+                                    text: 'Welcome to ',
                                     style: TextStyle(
                                       fontSize: 25,
+                                      letterSpacing: 2,
                                       color: Colors.yellow[700],
-                                      fontWeight: FontWeight.bold,
+                                      // fontWeight: FontWeight.bold,
                                     ),
-                                  )
-                              )
+                                    children: [
+                                      TextSpan(
+                                        text: 'Reddit',
+                                        style: TextStyle(
+                                          fontSize: 25,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.white,
+                                          // fontWeight: FontWeight.bold,
+                                        ),
+                                      )
+                                    ]
+                                  ),
+                              ),
+                              SizedBox(height: 5,),
+                              Text("SignUp to continue",
+                                style: TextStyle(
+                                  // fontSize: 25,
+                                  letterSpacing: 1,
+                                  color: Colors.white,
+                                  // fontWeight: FontWeight.bold,
+                                ),
+                              ),
+
                             ],
                           )
                       )
