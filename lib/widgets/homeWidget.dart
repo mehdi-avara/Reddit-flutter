@@ -14,7 +14,7 @@ class HomeWidget extends StatelessWidget {
 
       child: Column(
         children: <Widget>[
-          homeWidget._profileListTile("community", "user"),
+          homeWidget._profileListTile(_post.user.name, _post.community.name),
           homeWidget._postPart(),
           Row(
             children: <Widget>[
