@@ -13,27 +13,11 @@ class HomeWidget extends StatelessWidget {
 
       child: Column(
         children: <Widget>[
-          Row(
-            children: <Widget>[
-              Expanded(
-                child: Container(
-                  color: Colors.transparent,
-                  height: 20,
-                ),
-              ),
-              Expanded(
-                child: Container(
-                  color: Colors.green,
-                  height: 20,
-                ),
-              ),
-              Expanded(
-                child: Container(
-                  color: Colors.blue,
-                  height: 20,
-                ),
-              ),
-            ],
+          ListTile(
+            leading: Icon(Icons.home),
+            title: Text('community'),
+            subtitle: Text('user'),
+            trailing: Icon(Icons.more_vert),
           ),
           Row(
             children: <Widget>[
