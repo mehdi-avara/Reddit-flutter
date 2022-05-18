@@ -9,6 +9,7 @@ class Palette{
   static const Color googleColor = Color(0xFFDE4B39);
   static const Color backgroundColor = Color(0xFFECF3F9);
   static const Color widgetBackground = Color(0xFF474747);
+  static const Color homeWidgetBackground = Color(0xFF211D1D);
 
 }
 class themeSizes{
