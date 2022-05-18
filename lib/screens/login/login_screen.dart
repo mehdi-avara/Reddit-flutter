@@ -76,6 +76,64 @@ class _LoginSignUpScreenState extends State<LoginSignUpScreen>{
                           )
                       )
                   )
+              ),
+              Positioned(
+                top: 200,
+
+                child: Container(
+                  height: 380,
+                  padding: EdgeInsets.all(20),
+                  width: MediaQuery.of(context).size.width-40,
+                  margin: EdgeInsets.symmetric(horizontal: 20),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(15),
+                      boxShadow: [
+                        BoxShadow(
+                            color: Colors.black.withOpacity(0.3),
+                            blurRadius: 15,
+                            spreadRadius: 5,
+                        )
+                      ]
+                  ),
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Column(
+                            children: [
+                              Text("Login",style: TextStyle(
+                                fontSize:16,
+                                fontWeight: FontWeight.bold,
+                                color: Palette.textColor1,
+                              ),),
+                              Container(
+                                height: 2,
+                                width: 55,
+                                color: Colors.orange,
+                              ),
+                            ],
+                          ),
+                Column(
+                  children: [
+                    Text("SignUp",style: TextStyle(
+                      fontSize:16,
+                      fontWeight: FontWeight.bold,
+                      color: Palette.activeColor,
+                    ),),
+                    Container(
+                      margin: EdgeInsets.only(top: 3),
+                      height: 2,
+                      width: 55,
+                      color: Colors.orange,
+                    ),
+                  ],
+                )],
+                      )
+                    ],
+                  ),
+                ),
               )
             ],
           )
