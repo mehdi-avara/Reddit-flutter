@@ -14,17 +14,33 @@ class HomeWidget extends StatelessWidget {
       child: Column(
         children: <Widget>[
           ListTile(
+
             leading: CircleAvatar(
-              radius: MediaQuery.of(context).size.height *0.10,
+              radius: themeSizes.avatarRadius,
               backgroundColor: Colors.grey[850],
               child: Icon(
                 Icons.person,
+                size: themeSizes.avatarIconSize,
                 color: Colors.white,
               ),
             ),
-            title: Text('community'),
-            subtitle: Text('user'),
-            trailing: Icon(Icons.more_vert),
+            title: Text('community',
+              style: TextStyle(
+                fontSize: themeSizes.communityName,
+                  fontWeight: FontWeight.bold,
+                  color: Palette.textColor1,
+              ),
+            ),
+            subtitle: Text('user'
+              , style: TextStyle(
+                fontSize: themeSizes.userName,
+                color: Palette.textColor2,
+              ),
+            ),
+            trailing: Icon(
+              Icons.more_vert,
+              size: themeSizes.avatarIconSize,
+            ),
           ),
           Row(
             children: <Widget>[
