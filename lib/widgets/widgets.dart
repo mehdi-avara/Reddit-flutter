@@ -14,28 +14,7 @@ class HomeWidget extends StatelessWidget {
       child: Column(
         children: <Widget>[
           homeWidget._profileListTile("community", "user"),
-          Row(
-            children: <Widget>[
-              Expanded(
-                child: Container(
-                  color: Colors.red,
-                  height: 100,
-                ),
-              ),
-              Expanded(
-                child: Container(
-                  color: Colors.green,
-                  height: 100,
-                ),
-              ),
-              Expanded(
-                child: Container(
-                  color: Colors.blue,
-                  height: 100,
-                ),
-              ),
-            ],
-          ),
+          homeWidget._postPart(),
           Row(
             children: <Widget>[
               Expanded(
@@ -64,6 +43,30 @@ class HomeWidget extends StatelessWidget {
   }
 }
 class homeWidget{
+  static Row _postPart(){
+    Row(
+      children: <Widget>[
+        Expanded(
+          child: Container(
+            color: Colors.red,
+            height: 100,
+          ),
+        ),
+        Expanded(
+          child: Container(
+            color: Colors.green,
+            height: 100,
+          ),
+        ),
+        Expanded(
+          child: Container(
+            color: Colors.blue,
+            height: 100,
+          ),
+        ),
+      ],
+    );
+  }
   static Container _profileListTile(String title, String subtitle, {String imagePath}) {
     return Container(
       child: ListTile(
@@ -93,7 +96,7 @@ class homeWidget{
         ),
         trailing: Icon(
           Icons.more_vert,
-          size: themeSizes.avatarIconSize,
+          color: Palette.textColor2,
         ),
         dense: true,
         visualDensity: VisualDensity(vertical: -4.0),
