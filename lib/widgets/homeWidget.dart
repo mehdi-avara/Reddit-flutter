@@ -14,7 +14,7 @@ class HomeWidget extends StatelessWidget {
 
       child: Column(
         children: <Widget>[
-          homeWidget._profileListTile(_post.user.name, _post.community.name, _post.user.avatar),
+          homeWidget._profileListTile(_post.user.name, _post.community.name, _post.user.profileImageUrl),
           homeWidget._postPart(),
           Row(
             children: <Widget>[
@@ -68,7 +68,7 @@ class homeWidget{
       ],
     );
   }
-  static Container _profileListTile(String title, String subtitle, {String imagePath}) {
+  static Container _profileListTile(String title, String subtitle, String imagePath) {
     return Container(
       child: ListTile(
         leading: CircleAvatar(
