@@ -14,7 +14,6 @@ class HomeWidget extends StatelessWidget {
       child: Column(
         children: <Widget>[
           ListTile(
-
             leading: CircleAvatar(
               radius: themeSizes.avatarRadius,
               backgroundColor: Colors.grey[850],
@@ -41,6 +40,8 @@ class HomeWidget extends StatelessWidget {
               Icons.more_vert,
               size: themeSizes.avatarIconSize,
             ),
+            dense: true,
+            visualDensity: VisualDensity(vertical: -4.0),
           ),
           Row(
             children: <Widget>[
