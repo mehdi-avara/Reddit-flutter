@@ -78,9 +78,9 @@ class _MyHomePageState extends State<MyHomePage> {
               style: Theme.of(context).textTheme.headline4,
             ),
             HomeWidget(
-                Post.text("0", "example 1", "discribed1", User(), Community())),
+                Post.text("0", "example 1", "discribed1", User("user 1"), Community("community 1"))),
             HomeWidget(
-                Post.text("1", "example 2", "discribed2", User(), Community())),
+                Post.text("1", "example 2", "discribed2", User("user 2"), Community("community 2"))),
           ],
         ),
       ),
