@@ -15,7 +15,7 @@ class HomeWidget extends StatelessWidget {
       child: Column(
         children: <Widget>[
           homeWidget._profileListTile(_post.user.name, _post.community.name, _post.user.profileImageUrl),
-          homeWidget._postPart(),
+          homeWidget._postPart(_post.title,_post.discription),
           Row(
             children: <Widget>[
               Expanded(
@@ -44,8 +44,8 @@ class HomeWidget extends StatelessWidget {
   }
 }
 class homeWidget{
-  static Row _postPart(){
-    Row(
+  static Row _postPart(String Title,String description){
+    return Row(
       children: <Widget>[
         Expanded(
           child: Container(
