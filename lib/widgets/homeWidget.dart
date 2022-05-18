@@ -44,29 +44,13 @@ class HomeWidget extends StatelessWidget {
   }
 }
 class homeWidget{
-  static Row _postPart(String Title,String description){
-    return Row(
-      children: <Widget>[
-        Expanded(
-          child: Container(
-            color: Colors.red,
-            height: 100,
-          ),
-        ),
-        Expanded(
-          child: Container(
-            color: Colors.green,
-            height: 100,
-          ),
-        ),
-        Expanded(
-          child: Container(
-            color: Colors.blue,
-            height: 100,
-          ),
-        ),
-      ],
-    );
+  static Container _postPart(String Title,String description){
+    return Container(
+      child: ListTile(
+        title: Text(Title,style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+        subtitle: Text(description,style: TextStyle(fontSize: 15),),
+      ),
+      );
   }
   static Container _profileListTile(String title, String subtitle, String imagePath) {
     return Container(
