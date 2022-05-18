@@ -1,8 +1,13 @@
 import 'package:ui_flutter/models/comment.dart';
 import 'package:ui_flutter/models/community.dart';
 import 'package:ui_flutter/models/user.dart';
+enum Modes{
+  image,
+  video,
+  text
+}
+class Post{
 
-class post{
   String _postId;
   String _title;
   String _discription;
@@ -11,6 +16,8 @@ class post{
   User _user;
   Community _community;
   List<Comment> _comments;
+  Modes _mode;
+
   String get postId => _postId;
 
   Community get community => _community;
@@ -51,5 +58,19 @@ class post{
 
   set comments(List<Comment> value) {
     _comments = value;
+  }
+
+  Post.image(this._postId, this._title, this._discription){
+    _mode = Modes.image;
+  }
+
+
+  Post.text(this._postId, this._title, this._discription, this._user,
+      this._community){
+    _mode = Modes.text;
+  }
+  Post.video(this._postId, this._title, this._videoUrl, this._user,
+      this._community){
+    _mode = Modes.video;
   }
 }
