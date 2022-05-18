@@ -71,53 +71,66 @@ class homeWidget{
     return Container(
       child:Row(
         children: <Widget>[
-          Container(
-              // color: Colors.green,
-              height: 20,
+          Expanded(
+            child: Container(
+                // color: Colors.green,
+                height: 30,
+                child: Row(
+                  children: <Widget>[
+                    IconButton(
+                      icon:Icon(Icons.arrow_upward
+                        ,color: Palette.textColor2,
+                      ),
+                      onPressed: (){},
+                      iconSize: 15,),
+                    Text("vote",style: TextStyle(color: Colors.white,fontSize: 10),),
+                    IconButton(
+                      icon:Icon(Icons.arrow_downward
+                        ,color: Palette.textColor2,
+                      ),
+                      onPressed: (){},
+                      iconSize: 15,),
+                  ],
+                ),
+              ),
+          ),
+          Expanded(
+            child: Container(
+              height: 30,
               child: Row(
                 children: <Widget>[
                   IconButton(
-                    icon:Icon(Icons.arrow_upward
+                    icon:Icon(Icons.comment
                       ,color: Palette.textColor2,
                     ),
                     onPressed: (){},
                     iconSize: 15,),
-                  Text("vote",style: TextStyle(color: Colors.white,fontSize: 10),),
-                  IconButton(
-                    icon:Icon(Icons.arrow_downward
-                      ,color: Palette.textColor2,
-                    ),
-                    onPressed: (){},
-                    iconSize: 15,),
+                  Text("comment",style: TextStyle(color: Colors.white,fontSize: 10),),
+
                 ],
               ),
             ),
-          Expanded(
-            child: Container(
-              color: Colors.red,
-              height: 20,
-            ),
           ),
           Expanded(
             child: Container(
-              color: Colors.blue,
-              height: 20,
-            ),
-          ),
-          Expanded(child: Container(
-            // color: Colors.yellow,
-            height: 30,
-            child: IconButton(
-              icon: Icon(Icons.favorite_border),
-              onPressed: (){},
-              iconSize: 15,
-            ),
-          ),
-          ),
-          Expanded(
-            child: Container(
-              color: Colors.orange,
-              height: 20,
+              height: 30,
+              child: Row(
+                children: <Widget>[
+                  IconButton(
+                    icon:Icon(Icons.share
+                      ,color: Palette.textColor2,
+                    ),
+                    onPressed: (){},
+                    iconSize: 15,),
+                  Text("share",style: TextStyle(color: Colors.white,fontSize: 10),),
+                  IconButton(
+                    icon:Icon(Icons.print
+                      ,color: Palette.textColor2,
+                    ),
+                    onPressed: (){},
+                    iconSize: 15,)
+                ],
+              ),
             ),
           ),
         ],
