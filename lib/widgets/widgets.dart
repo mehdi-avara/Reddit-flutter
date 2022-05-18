@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ui_flutter/config/palette.dart';
 
 class HomeWidget extends StatelessWidget {
   const HomeWidget({Key key}) : super(key: key);
@@ -7,7 +8,7 @@ class HomeWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.black,
+        color: Palette.widgetBackground,
         ),
 
       child: Column(
@@ -16,20 +17,20 @@ class HomeWidget extends StatelessWidget {
             children: <Widget>[
               Expanded(
                 child: Container(
-                  color: Colors.red,
-                  height: 100,
+                  color: Colors.transparent,
+                  height: 20,
                 ),
               ),
               Expanded(
                 child: Container(
                   color: Colors.green,
-                  height: 100,
+                  height: 20,
                 ),
               ),
               Expanded(
                 child: Container(
                   color: Colors.blue,
-                  height: 100,
+                  height: 20,
                 ),
               ),
             ],
@@ -61,19 +62,19 @@ class HomeWidget extends StatelessWidget {
               Expanded(
                 child: Container(
                   color: Colors.red,
-                  height: 100,
+                  height: 20,
                 ),
               ),
               Expanded(
                 child: Container(
                   color: Colors.green,
-                  height: 100,
+                  height: 20,
                 ),
               ),
               Expanded(
                 child: Container(
                   color: Colors.blue,
-                  height: 100,
+                  height: 20,
                 ),
               ),
             ],
