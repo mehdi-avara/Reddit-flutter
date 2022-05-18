@@ -4,10 +4,10 @@ import 'package:ui_flutter/config/palette.dart';
 
 class LoginSignUpScreen extends StatefulWidget{
    @override
-   _LoginSignUpScreenState createState() => _LoginSignUpScreenState();
+   State<LoginSignUpScreen> createState() => _LoginSignUpScreenState();
  }
 
-class _LoginSignUpScreenState {
+class _LoginSignUpScreenState extends State<LoginSignUpScreen>{
   @override
   Widget build(BuildContext context) {
     bool isSignUpScreen = true;
@@ -28,7 +28,7 @@ class _LoginSignUpScreenState {
                       decoration: BoxDecoration(
                           color: Colors.black,
                           image:DecorationImage(
-                            image: AssetImage("images/background.jpg"),
+                            image: AssetImage("assets/images/background.jpg"),
                             fit: BoxFit.fill,
 
                           )
