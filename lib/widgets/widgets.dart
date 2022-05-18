@@ -7,7 +7,7 @@ class HomeWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Colors.black,
         ),
 
       child: Column(
