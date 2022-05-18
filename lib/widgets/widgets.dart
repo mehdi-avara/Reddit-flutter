@@ -13,36 +13,7 @@ class HomeWidget extends StatelessWidget {
 
       child: Column(
         children: <Widget>[
-          ListTile(
-            leading: CircleAvatar(
-              radius: themeSizes.avatarRadius,
-              backgroundColor: Colors.grey[850],
-              child: Icon(
-                Icons.person,
-                size: themeSizes.avatarIconSize,
-                color: Colors.white,
-              ),
-            ),
-            title: Text('community',
-              style: TextStyle(
-                fontSize: themeSizes.communityName,
-                  fontWeight: FontWeight.bold,
-                  color: Palette.textColor1,
-              ),
-            ),
-            subtitle: Text('user'
-              , style: TextStyle(
-                fontSize: themeSizes.userName,
-                color: Palette.textColor2,
-              ),
-            ),
-            trailing: Icon(
-              Icons.more_vert,
-              size: themeSizes.avatarIconSize,
-            ),
-            dense: true,
-            visualDensity: VisualDensity(vertical: -4.0),
-          ),
+          homeWidget._profileListTile("community", "user"),
           Row(
             children: <Widget>[
               Expanded(
@@ -88,6 +59,44 @@ class HomeWidget extends StatelessWidget {
             ],
           ),
         ],
+      ),
+    );
+  }
+}
+class homeWidget{
+  static Container _profileListTile(String title, String subtitle, {String imagePath}) {
+    return Container(
+      child: ListTile(
+        leading: CircleAvatar(
+          radius: themeSizes.avatarRadius,
+          backgroundColor: Colors.grey[850],
+          child: imagePath != null
+              ? Image.asset(imagePath)
+              : Icon(
+            Icons.person,
+            size: themeSizes.avatarIconSize,
+            color: Colors.white,
+          ),
+        ),
+        title: Text(title,
+          style: TextStyle(
+            fontSize: themeSizes.communityName,
+            fontWeight: FontWeight.bold,
+            color: Palette.textColor1,
+          ),
+        ),
+        subtitle: Text(subtitle
+          , style: TextStyle(
+            fontSize: themeSizes.userName,
+            color: Palette.textColor2,
+          ),
+        ),
+        trailing: Icon(
+          Icons.more_vert,
+          size: themeSizes.avatarIconSize,
+        ),
+        dense: true,
+        visualDensity: VisualDensity(vertical: -4.0),
       ),
     );
   }
