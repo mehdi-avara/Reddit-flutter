@@ -77,6 +77,7 @@ class _MyHomePageState extends State<MyHomePage> {
               style: Theme.of(context).textTheme.headline4,
             ),
             HomeWidget(),
+            HomeWidget(),
           ],
         ),
       ),
