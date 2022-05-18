@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:ui_flutter/config/palette.dart';
+import 'package:ui_flutter/models/post.dart';
 
 class HomeWidget extends StatelessWidget {
-  const HomeWidget({Key key}) : super(key: key);
-
+  Post _post;
+  HomeWidget(this._post, {Key key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(

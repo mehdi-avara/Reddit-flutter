@@ -1,10 +1,11 @@
-
 import 'package:flutter/material.dart';
+import 'package:ui_flutter/models/community.dart';
+import 'package:ui_flutter/models/post.dart';
+import 'package:ui_flutter/models/user.dart';
 import 'package:ui_flutter/widgets/homeWidget.dart';
 
-
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key key,  this.title}) : super(key: key);
+  const MyHomePage({Key key, this.title}) : super(key: key);
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
@@ -76,8 +77,10 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
             ),
-            HomeWidget(),
-            HomeWidget(),
+            HomeWidget(
+                Post.text("0", "example 1", "discribed1", User(), Community())),
+            HomeWidget(
+                Post.text("1", "example 2", "discribed2", User(), Community())),
           ],
         ),
       ),
