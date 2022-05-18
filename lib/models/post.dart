@@ -7,6 +7,7 @@ class post{
   String _title;
   String _discription;
   List<String> _imageUrl;
+  String _videoUrl;
   User _user;
   Community _community;
   List<Comment> _comments;
