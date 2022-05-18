@@ -16,28 +16,7 @@ class HomeWidget extends StatelessWidget {
         children: <Widget>[
           homeWidget._profileListTile(_post.user.name, _post.community.name, _post.user.profileImageUrl),
           homeWidget._postPart(_post.title,_post.discription),
-          Row(
-            children: <Widget>[
-              Expanded(
-                child: Container(
-                  color: Colors.red,
-                  height: 20,
-                ),
-              ),
-              Expanded(
-                child: Container(
-                  color: Colors.green,
-                  height: 20,
-                ),
-              ),
-              Expanded(
-                child: Container(
-                  color: Colors.blue,
-                  height: 20,
-                ),
-              ),
-            ],
-          ),
+homeWidget._belowPostPart(),
         ],
       ),
     );
@@ -88,4 +67,62 @@ class homeWidget{
       ),
     );
   }
+  static Container _belowPostPart(){
+    return Container(
+      child:Row(
+        children: <Widget>[
+          Container(
+              // color: Colors.green,
+              height: 20,
+              child: Row(
+                children: <Widget>[
+                  IconButton(
+                    icon:Icon(Icons.arrow_upward
+                      ,color: Palette.textColor2,
+                    ),
+                    onPressed: (){},
+                    iconSize: 15,),
+                  Text("vote",style: TextStyle(color: Colors.white,fontSize: 10),),
+                  IconButton(
+                    icon:Icon(Icons.arrow_downward
+                      ,color: Palette.textColor2,
+                    ),
+                    onPressed: (){},
+                    iconSize: 15,),
+                ],
+              ),
+            ),
+          Expanded(
+            child: Container(
+              color: Colors.red,
+              height: 20,
+            ),
+          ),
+          Expanded(
+            child: Container(
+              color: Colors.blue,
+              height: 20,
+            ),
+          ),
+          Expanded(child: Container(
+            // color: Colors.yellow,
+            height: 30,
+            child: IconButton(
+              icon: Icon(Icons.favorite_border),
+              onPressed: (){},
+              iconSize: 15,
+            ),
+          ),
+          ),
+          Expanded(
+            child: Container(
+              color: Colors.orange,
+              height: 20,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
 }
