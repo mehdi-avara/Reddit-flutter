@@ -5,24 +5,19 @@ import 'package:ui_flutter/screens/login/login_screen.dart';
 
 void main() {
   runApp(const App());
-  runApp(const LoginSignUpUI());
+  runApp(const LoginSignupUI());
 }
-class LoginSignUpUI extends StatelessWidget {
-  const LoginSignUpUI ({Key key}) : super(key: key);
+class LoginSignupUI extends StatelessWidget {
+  const LoginSignupUI({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Login SignUp UI',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-       home: LoginSignUpScreen(),
+      title: "Login Signup UI",
+      home: LoginSignupScreen(),
     );
   }
-
-
 }
 
 
