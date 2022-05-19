@@ -43,7 +43,7 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
                           ),
                           children: [
                             TextSpan(
-                              text: isSignupScreen ? " Reddit," : " Back,",
+                              text: isSignupScreen ? " Reddit," : " Reddit,",
                               style: TextStyle(
                                 fontSize: 25,
                                 fontWeight: FontWeight.bold,
@@ -58,7 +58,7 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
                     Text(
                       isSignupScreen
                           ? "Signup to Continue"
-                          : "Signin to Continue",
+                          : "Login to Continue",
                       style: TextStyle(
                         letterSpacing: 1,
                         color: Colors.white,
@@ -170,14 +170,14 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
             left: 0,
             child: Column(
               children: [
-                Text(isSignupScreen ? "Or Signup with" : "Or Signin with"),
+                Text(isSignupScreen ? "Or Signup with" : "Or Login with"),
                 Container(
                   margin: EdgeInsets.only(right: 20, left: 20, top: 15),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       buildTextButton(MaterialCommunityIcons.apple,
-                          "Facebook", Palette.appleColor),
+                          "Apple", Palette.appleColor),
                       buildTextButton(MaterialCommunityIcons.google_plus,
                           "Google", Palette.googleColor),
                     ],
