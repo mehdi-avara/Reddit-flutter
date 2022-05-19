@@ -8,8 +8,11 @@ class HomeWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.all(10),
+      margin: EdgeInsets.fromLTRB(0, 5, 0, 0),
       decoration: BoxDecoration(
         color: Palette.widgetBackground,
+        // borderRadius: BorderRadius.circular(10),
         ),
 
       child: Column(
