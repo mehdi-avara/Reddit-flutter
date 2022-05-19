@@ -45,44 +45,50 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             HomeWidget(
-                Post.text("0", "example 1", "discribed1", User("user 1"), Community("community 1"))),
+                Post.text("0", "example 1", "discribed1", User("user 1"),
+                    Community("community 1"))),
             HomeWidget(
-                Post.text("1", "example 2", "discribed2", User("user 2"), Community("community 2"))),
+                Post.text("1", "example 2", "discribed2", User("user 2"),
+                    Community("community 2"))),
           ],
         ),
       ),
-      bottomNavigationBar:BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home,
-            color: Colors.black,
-            ),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search,
-              color: Colors.black,),
-            label: 'Search',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.add,
-              color: Colors.black,),
-            label: 'Add',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.chat,
-              color: Colors.black,),
-            label: 'Chat',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.notifications,
-              color: Colors.black,),
-            label: 'Notifications',
-          ),
-        ],
-      showSelectedLabels: false,
-      ),
+        bottomNavigationBar:_bottomNavigationBar(),
 
+    );
+  }
+
+  BottomNavigationBar _bottomNavigationBar() {
+    return BottomNavigationBar(
+      items: const <BottomNavigationBarItem>[
+        BottomNavigationBarItem(
+          icon: Icon(Icons.home,
+            color: Colors.black,
+          ),
+          label: 'Home',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.search,
+            color: Colors.black,),
+          label: 'Search',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.add,
+            color: Colors.black,),
+          label: 'Add',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.chat,
+            color: Colors.black,),
+          label: 'Chat',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.notifications,
+            color: Colors.black,),
+          label: 'Notifications',
+        ),
+      ],
+      showSelectedLabels: false,
     );
   }
 }
