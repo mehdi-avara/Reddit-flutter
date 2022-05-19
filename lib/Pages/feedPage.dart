@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:ui_flutter/models/community.dart';
 import 'package:ui_flutter/models/post.dart';
 import 'package:ui_flutter/models/user.dart';
-import 'package:ui_flutter/widgets/homeWidget.dart';
+import 'package:ui_flutter/widgets/feedWidget.dart';
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key key, this.title}) : super(key: key);
+class feedPage extends StatefulWidget {
+  const feedPage({Key key, this.title}) : super(key: key);
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
@@ -19,10 +19,10 @@ class MyHomePage extends StatefulWidget {
   final String title;
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<feedPage> createState() => _feedPageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _feedPageState extends State<feedPage> {
   // int _counter = 0;
 
   void _incrementCounter() {
@@ -53,7 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: ListView.builder(
           itemCount: posts.length,
           itemBuilder: (context, index) {
-            return HomeWidget( posts[index]);
+            return feedWidget( posts[index]);
           },
         ),
       ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'HomePage.dart';
+import 'feedPage.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key key}) : super(key: key);
@@ -18,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
   _navigateToHome()async{
     await Future.delayed(Duration(milliseconds: 100), () {});
-    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => MyHomePage(title: "Reddit")));
+    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => feedPage(title: "Reddit")));
   }
 
   @override

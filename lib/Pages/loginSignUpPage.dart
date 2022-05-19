@@ -1,6 +1,6 @@
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter/material.dart';
-import 'package:ui_flutter/config/palette.dart';
+import 'package:ui_flutter/config/themeSettings.dart';
 class LoginSignupScreen extends StatefulWidget {
   @override
   _LoginSignupScreenState createState() => _LoginSignupScreenState();
