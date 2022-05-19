@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ui_flutter/config/palette.dart';
+import 'package:ui_flutter/config/themeSettings.dart';
 import 'package:ui_flutter/models/post.dart';
 
 class HomeWidget extends StatelessWidget {
