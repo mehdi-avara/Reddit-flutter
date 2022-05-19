@@ -30,24 +30,30 @@ class _MyHomePageState extends State<MyHomePage> {
       // _counter++;
     });
   }
+  List<Post> posts=[
+    Post.text("0", "example 1\nhhhh", "discribed1", User("user 1"),Community("community 1")),
+    Post.text("1", "example 2", "discribed2", User("user 2"),Community("community 2")),
+    Post.text("2", "example 3", "discribed3", User("user 3"),Community("community 3")),
+    Post.text("3", "example 4", "discribed4", User("user 4"),Community("community 4")),
+    Post.text("4", "example 5", "discribed5", User("user 5"),Community("community 5")),
+    Post.text("5", "example 6", "discribed6", User("user 6"),Community("community 6")),
+    Post.text("6", "example 7", "discribed7", User("user 7"),Community("community 7")),
+
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
+        backgroundColor: Colors.black,
         title: Text(widget.title),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            HomeWidget(Post.text("0", "example 1", "discribed1", User("user 1"),
-                Community("community 1"))),
-            HomeWidget(Post.text("1", "example 2", "discribed2", User("user 2"),
-                Community("community 2"))),
-          ],
+        child: ListView.builder(
+          itemCount: posts.length,
+          itemBuilder: (context, index) {
+            return HomeWidget( posts[index]);
+          },
         ),
       ),
       bottomNavigationBar: _bottomNavigationBar(),
