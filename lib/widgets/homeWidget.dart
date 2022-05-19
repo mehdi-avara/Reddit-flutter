@@ -9,7 +9,7 @@ class HomeWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(10),
-      margin: EdgeInsets.fromLTRB(0, 5, 0, 0),
+      margin: EdgeInsets.fromLTRB(0, 2, 0, 0),
       decoration: BoxDecoration(
         color: Palette.widgetBackground,
         // borderRadius: BorderRadius.circular(10),

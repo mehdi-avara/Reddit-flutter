@@ -8,7 +8,7 @@ class Palette{
   static const Color appleColor = Color(0xFF3B5999);
   static const Color googleColor = Color(0xFFDE4B39);
   static const Color backgroundColor = Color(0xFFECF3F9);
-  static const Color widgetBackground = Color(0xFF474747);
+  static const Color widgetBackground = Color(0xFF2A2929);
   static const Color homeWidgetBackground = Color(0xFF211D1D);
 
 }
