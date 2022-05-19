@@ -77,7 +77,7 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
             curve: Curves.bounceInOut,
             top: isSignupScreen ? 200 : 230,
             child: AnimatedContainer(
-              duration: Duration(milliseconds: 700),
+              duration: Duration(milliseconds: 1000),
               curve: Curves.bounceInOut,
               height: isSignupScreen ? 380 : 250,
               padding: EdgeInsets.all(20),
