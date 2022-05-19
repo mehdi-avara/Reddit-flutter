@@ -33,7 +33,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
@@ -44,17 +43,14 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            HomeWidget(
-                Post.text("0", "example 1", "discribed1", User("user 1"),
-                    Community("community 1"))),
-            HomeWidget(
-                Post.text("1", "example 2", "discribed2", User("user 2"),
-                    Community("community 2"))),
+            HomeWidget(Post.text("0", "example 1", "discribed1", User("user 1"),
+                Community("community 1"))),
+            HomeWidget(Post.text("1", "example 2", "discribed2", User("user 2"),
+                Community("community 2"))),
           ],
         ),
       ),
-        bottomNavigationBar:_bottomNavigationBar(),
-
+      bottomNavigationBar: _bottomNavigationBar(),
     );
   }
 
@@ -62,29 +58,38 @@ class _MyHomePageState extends State<MyHomePage> {
     return BottomNavigationBar(
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
-          icon: Icon(Icons.home,
+          icon: Icon(
+            Icons.home,
             color: Colors.black,
           ),
           label: 'Home',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.search,
-            color: Colors.black,),
+          icon: Icon(
+            Icons.search,
+            color: Colors.black,
+          ),
           label: 'Search',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.add,
-            color: Colors.black,),
+          icon: Icon(
+            Icons.add,
+            color: Colors.black,
+          ),
           label: 'Add',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.chat,
-            color: Colors.black,),
+          icon: Icon(
+            Icons.chat,
+            color: Colors.black,
+          ),
           label: 'Chat',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.notifications,
-            color: Colors.black,),
+          icon: Icon(
+            Icons.notifications,
+            color: Colors.black,
+          ),
           label: 'Notifications',
         ),
       ],
