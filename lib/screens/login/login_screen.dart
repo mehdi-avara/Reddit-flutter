@@ -176,8 +176,8 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      buildTextButton(MaterialCommunityIcons.facebook,
-                          "Facebook", Palette.facebookColor),
+                      buildTextButton(MaterialCommunityIcons.apple,
+                          "Facebook", Palette.appleColor),
                       buildTextButton(MaterialCommunityIcons.google_plus,
                           "Google", Palette.googleColor),
                     ],
