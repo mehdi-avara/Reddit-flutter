@@ -4,6 +4,7 @@ import 'package:ui_flutter/models/community.dart';
 import 'package:ui_flutter/models/post.dart';
 import 'package:ui_flutter/models/user.dart';
 import 'package:ui_flutter/widgets/feedWidget.dart';
+import 'package:ui_flutter/widgets/otherWidget.dart';
 
 import '../config/themeSettings.dart';
 
@@ -91,73 +92,10 @@ class _feedPageState extends State<feedPage> {
             },
           ),
         ),
-        bottomNavigationBar: _bottomNavigationBar(context),
+        bottomNavigationBar: widgets.bottomNavigationBar(context),
       ),
     );
   }
 
-  BottomNavigationBar _bottomNavigationBar(BuildContext context) {
-    return BottomNavigationBar(
-      items: const <BottomNavigationBarItem>[
-        BottomNavigationBarItem(
-          icon: Icon(
-            Icons.home,
-          ),
-          label: 'Home',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(
-            Icons.search,
-          ),
-
-          label: 'Search',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(
-            Icons.add,
-          ),
-          label: 'Add',
-
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(
-            Icons.chat,
-          ),
-          label: 'Chat',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(
-            Icons.notifications,
-          ),
-          label: 'Notifications',
-        ),
-      ],
-      onTap: (index) {
-        onTapFunction(index,context);
-      },
-      showUnselectedLabels: true,
-
-      showSelectedLabels: true,
-    );
-  }
-}
-onTapFunction(int mode,BuildContext context){
-  switch(mode){
-    case 0:
-      // Navigator.push(context, MaterialPageRoute(builder: (context)=>HomePage()));
-      break;
-      case 1:
-      // Navigator.push(context, MaterialPageRoute(builder: (context)=>SearchPage()));
-      break;
-      case 2:
-        Navigator.push(context,MaterialPageRoute(builder: (context)=>addPost()));
-      break;
-      case 3:
-      // Navigator.push(context, MaterialPageRoute(builder: (context)=>ChatPage()));
-      break;
-      case 4:
-      // Navigator.push(context, MaterialPageRoute(builder: (context)=>NotificationsPage()));
-      break;
-  }
 }
 
