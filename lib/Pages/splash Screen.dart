@@ -35,14 +35,17 @@ class _SplashScreenState extends State<SplashScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                height: MediaQuery.of(context).size.height * 0.1,
-                width: MediaQuery.of(context).size.width * 0.1,
+                height: MediaQuery.of(context).size.height * 0.2,
+                width: MediaQuery.of(context).size.width * 0.2,
                 child: Image.asset('assets/images/logo.png'),
               ),
-              Text('Reddit', style: TextStyle(
-                fontSize: MediaQuery.of(context).size.height * 0.03,
-                fontWeight: FontWeight.bold,
-              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text('Reddit', style: TextStyle(
+                  fontSize: MediaQuery.of(context).size.height * 0.03,
+                  fontWeight: FontWeight.bold,
+                ),
+                ),
               ),
             ],
           ),
