@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ui_flutter/Pages/addPost.dart';
+import 'package:ui_flutter/Pages/communityPage.dart';
 class widgets extends StatelessWidget {
   const widgets({Key key}) : super(key: key);
 
@@ -18,10 +19,10 @@ class widgets extends StatelessWidget {
         ),
         BottomNavigationBarItem(
           icon: Icon(
-            Icons.search,
+            Icons.group,
           ),
 
-          label: 'Search',
+          label: 'community',
         ),
         BottomNavigationBarItem(
           icon: Icon(
@@ -57,7 +58,7 @@ class widgets extends StatelessWidget {
       // Navigator.push(context, MaterialPageRoute(builder: (context)=>HomePage()));
         break;
       case 1:
-      // Navigator.push(context, MaterialPageRoute(builder: (context)=>SearchPage()));
+      Navigator.push(context, MaterialPageRoute(builder: (context)=>communityPage()));
         break;
       case 2:
         Navigator.push(context,MaterialPageRoute(builder: (context)=>addPost()));
