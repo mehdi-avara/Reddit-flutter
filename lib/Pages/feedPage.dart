@@ -53,14 +53,11 @@ class _feedPageState extends State<feedPage> {
       theme: ThemeClass.darkTheme,
       darkTheme: ThemeClass.darkTheme,
       home: Scaffold(
-        // backgroundColor: Colors.black,
         appBar: AppBar(
 
-          // backgroundColor: Colors.grey[900],
           title: ListTile(
             leading: CircleAvatar(
               radius: themeSizes.avatarRadius,
-              // backgroundColor: Colors.grey[850],
               child: Image.asset(_user.profileImageUrl),
             ),
             title: TextField(
@@ -68,13 +65,11 @@ class _feedPageState extends State<feedPage> {
                 hintText: "Search",
                 hintStyle: TextStyle(
                   fontSize: themeSizes.searchBarHint,
-                  // color: Palette.textColor2,
                 ),
                 border: InputBorder.none,
                 suffixIcon: Icon(
                   Icons.search,
                   size: themeSizes.searchBarIcon,
-                  // color: Palette.textColor2,
                 ),
               ),
             ),
@@ -99,14 +94,12 @@ class _feedPageState extends State<feedPage> {
         BottomNavigationBarItem(
           icon: Icon(
             Icons.home,
-            // color: Colors.black,
           ),
           label: 'Home',
         ),
         BottomNavigationBarItem(
           icon: Icon(
             Icons.search,
-            // color: Colors.black,
           ),
 
           label: 'Search',
@@ -114,7 +107,6 @@ class _feedPageState extends State<feedPage> {
         BottomNavigationBarItem(
           icon: Icon(
             Icons.add,
-            // color: Colors.black,
           ),
           label: 'Add',
 
@@ -122,14 +114,12 @@ class _feedPageState extends State<feedPage> {
         BottomNavigationBarItem(
           icon: Icon(
             Icons.chat,
-            // color: Colors.black,
           ),
           label: 'Chat',
         ),
         BottomNavigationBarItem(
           icon: Icon(
             Icons.notifications,
-            // color: Colors.black,
           ),
           label: 'Notifications',
         ),
