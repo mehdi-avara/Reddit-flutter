@@ -32,6 +32,7 @@ class _feedPageState extends State<feedPage> {
       // _counter++;
     });
   }
+  User _user = User.withProfileImageUrl("Sourav", "assets/images/profile.jpg");
   List<Post> posts=[
     Post.text("0", "example 1\nhhhh", "discribed1", User("user 1"),Community("community 1")),
     Post.text("1", "example 2", "discribed2", User("user 2"),Community("community 2")),
@@ -54,7 +55,7 @@ class _feedPageState extends State<feedPage> {
           leading: CircleAvatar(
             radius: themeSizes.avatarRadius,
             backgroundColor: Colors.grey[850],
-            child: Image.asset("assets/images/profile.png"),
+            child: Image.asset(_user.profileImageUrl),
           ),
           title: TextField(
             decoration: InputDecoration(
