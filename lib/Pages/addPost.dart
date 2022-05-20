@@ -55,44 +55,47 @@ class _addPostState extends State<addPost> {
       padding: EdgeInsets.only(top: 140.0, left: 40.0, right: 40.0,bottom: 10.0),
             child:Column(
               children: [
-                Row(
-                  children: [
-                    Text('Choose The Community',style: TextStyle(fontSize: 20.0,fontWeight: FontWeight.bold),),
-                    IconButton(
-                      icon: Icon(Icons.list),
-                      onPressed: () {
-                        ExpansionPanelList(
-                          expansionCallback: (int index, bool isExpanded) {},
-                          children: [
-                            ExpansionPanel(
-                              headerBuilder: (BuildContext context, bool isExpanded) {
-                                return ListTile(
-                                  title: Text('Item 1'),
-                                );
-                              },
-                              body: ListTile(
-                                title: Text('Item 1 child'),
-                                subtitle: Text('Details goes here'),
+                Padding(
+                  padding: const EdgeInsets.only(top: 20.0, bottom: 20.0, left: 30.0, right: 30.0),
+                  child: Row(
+                    children: [
+                      Text('Choose The Community',style: TextStyle(fontSize: 20.0,fontWeight: FontWeight.bold),),
+                      IconButton(
+                        icon: Icon(Icons.list),
+                        onPressed: () {
+                          ExpansionPanelList(
+                            expansionCallback: (int index, bool isExpanded) {},
+                            children: [
+                              ExpansionPanel(
+                                headerBuilder: (BuildContext context, bool isExpanded) {
+                                  return ListTile(
+                                    title: Text('Item 1'),
+                                  );
+                                },
+                                body: ListTile(
+                                  title: Text('Item 1 child'),
+                                  subtitle: Text('Details goes here'),
+                                ),
+                                isExpanded: true,
                               ),
-                              isExpanded: true,
-                            ),
-                            ExpansionPanel(
-                              headerBuilder: (BuildContext context, bool isExpanded) {
-                                return ListTile(
-                                  title: Text('Item 2'),
-                                );
-                              },
-                              body: ListTile(
-                                title: Text('Item 2 child'),
-                                subtitle: Text('Details goes here'),
+                              ExpansionPanel(
+                                headerBuilder: (BuildContext context, bool isExpanded) {
+                                  return ListTile(
+                                    title: Text('Item 2'),
+                                  );
+                                },
+                                body: ListTile(
+                                  title: Text('Item 2 child'),
+                                  subtitle: Text('Details goes here'),
+                                ),
+                                isExpanded: false,
                               ),
-                              isExpanded: false,
-                            ),
-                          ],
-                        );
-                      },
-                    ),
-                  ],
+                            ],
+                          );
+                        },
+                      ),
+                    ],
+                  ),
                 ),
                 ListTile(
                   title: TextField(
