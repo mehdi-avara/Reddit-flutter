@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
+import '../config/themeSettings.dart';
+
 class addPost extends StatefulWidget {
   const addPost({Key key}) : super(key: key);
 
@@ -13,10 +15,16 @@ class addPost extends StatefulWidget {
 class _addPostState extends State<addPost> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      themeMode:ThemeMode.system,
+      theme: ThemeClass.darkTheme,
+      darkTheme: ThemeClass.darkTheme,
+      home: Scaffold(
         appBar: AppBar(
-          //
           title: Text('Add Post'),
+          // backgroundColor: Colors.blue,
+          backgroundColor:Theme.of(context).appBarTheme.backgroundColor ,
           leading: IconButton(
             //create Text icon
             icon: Icon(Icons.arrow_back),
@@ -31,68 +39,36 @@ class _addPostState extends State<addPost> {
               child: Text('NEXT'),
               style: TextButton.styleFrom(
                 primary: Colors.white,
-                backgroundColor: Colors.blue,
+                backgroundColor: Colors.black,
                 onSurface: Colors.grey,
               ),
-              onPressed: () {
-                //empty space for putting function
+              onPressed: () {  //empty space for putting function
+                Navigator.pop(context);
               },
             ),
           ],
         ),
         body: Padding(
-            padding: EdgeInsets.all(15),
+            padding: EdgeInsets.only(top: 140.0, left: 40.0, right: 40.0,bottom: 10.0),
             child:ListTile(
               title: TextField(
                 decoration: InputDecoration(
                     labelText: 'Title',
                     hintText: 'Add a Title',
                     border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(5.0))),
+                        borderRadius: BorderRadius.circular(20.0))),
               ),
               subtitle: TextField(
                 decoration: InputDecoration(
                     labelText: 'Description',
                     hintText: 'Add a Description',
                     border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(5.0))),
-              ),
-              trailing: IconButton(
-                icon: Icon(Icons.add),
-                onPressed: () {
-                  Navigator.pop(context);
-                },
+                        borderRadius: BorderRadius.circular(20.0))),
               ),
             )
         ),
+      ),
     );
   }
 }
-// Column(
-// children: <Widget> [
-// TextField(
-// decoration: InputDecoration(
-// border: OutlineInputBorder(),
-// labelText: 'Add a Title',
-// ),
-// ),
-// Padding(
-// padding: EdgeInsets.all(10),
-// ),
-// TextField(
-// decoration: InputDecoration(
-// border: OutlineInputBorder(),
-// labelText: 'Add a Description',
-// ),
-// ),
-// Padding(
-// padding: EdgeInsets.all(10),
-// ),
-// RaisedButton(
-// child: Text('Add Post'),
-// onPressed: () {
-// Navigator.pop(context);
-// },
-// ),
-// ]
-// )
+
