@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 
 class Palette{
@@ -28,3 +29,22 @@ class themeSizes{
   static const double searchBarIcon=20.0;
 }
 
+
+class ThemeClass{
+
+  static ThemeData lightTheme = ThemeData(
+      scaffoldBackgroundColor: Colors.white,
+      colorScheme: ColorScheme.light(),
+      appBarTheme: AppBarTheme(
+        backgroundColor: Colors.blue,
+      )
+  );
+
+  static ThemeData darkTheme = ThemeData(
+      scaffoldBackgroundColor: Colors.black,
+      colorScheme: ColorScheme.dark(),
+      appBarTheme: AppBarTheme(
+        backgroundColor: Colors.black,
+      )
+  );
+}
