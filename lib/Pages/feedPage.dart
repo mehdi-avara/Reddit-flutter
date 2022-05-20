@@ -83,11 +83,11 @@ class _feedPageState extends State<feedPage> {
           },
         ),
       ),
-      bottomNavigationBar: _bottomNavigationBar(),
+      bottomNavigationBar: _bottomNavigationBar(context),
     );
   }
 
-  BottomNavigationBar _bottomNavigationBar() {
+  BottomNavigationBar _bottomNavigationBar(BuildContext context) {
     return BottomNavigationBar(
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
@@ -129,14 +129,14 @@ class _feedPageState extends State<feedPage> {
         ),
       ],
       onTap: (index) {
-        onTapFunction(index);
+        onTapFunction(index,context);
       },
 
       showSelectedLabels: false,
     );
   }
 }
-onTapFunction(int mode){
+onTapFunction(int mode,BuildContext context){
   switch(mode){
     case 0:
       // Navigator.push(context, MaterialPageRoute(builder: (context)=>HomePage()));
@@ -145,7 +145,7 @@ onTapFunction(int mode){
       // Navigator.push(context, MaterialPageRoute(builder: (context)=>SearchPage()));
       break;
       case 2:
-      Navigator.push(context, MaterialPageRoute(builder: (context)=>addPost()));
+        Navigator.push(context,MaterialPageRoute(builder: (context)=>addPost()));
       break;
       case 3:
       // Navigator.push(context, MaterialPageRoute(builder: (context)=>ChatPage()));
