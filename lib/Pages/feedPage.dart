@@ -4,6 +4,8 @@ import 'package:ui_flutter/models/post.dart';
 import 'package:ui_flutter/models/user.dart';
 import 'package:ui_flutter/widgets/feedWidget.dart';
 
+import '../config/themeSettings.dart';
+
 class feedPage extends StatefulWidget {
   const feedPage({Key key, this.title}) : super(key: key);
 
@@ -46,8 +48,30 @@ class _feedPageState extends State<feedPage> {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
+
         backgroundColor: Colors.grey[900],
-        title: Text(widget.title),
+        title: ListTile(
+          leading: CircleAvatar(
+            radius: themeSizes.avatarRadius,
+            backgroundColor: Colors.grey[850],
+            child: Image.asset("assets/images/profile.png"),
+          ),
+          title: TextField(
+            decoration: InputDecoration(
+              hintText: "Search",
+              hintStyle: TextStyle(
+                fontSize: themeSizes.searchBarHint,
+                color: Palette.textColor2,
+              ),
+              border: InputBorder.none,
+              suffixIcon: Icon(
+                Icons.search,
+                size: themeSizes.searchBarIcon,
+                color: Palette.textColor2,
+              ),
+            ),
+          ),
+      ),
       ),
       body: Center(
         child: ListView.builder(

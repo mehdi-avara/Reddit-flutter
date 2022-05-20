@@ -22,5 +22,9 @@ class themeSizes{
   static const double userName = 12.0;
   static const double avatarIconSize = 25.0;
   static const double avatarRadius = 17.0;
+
+  static const double searchBarHint=12.0;
+
+  static const double searchBarIcon=20.0;
 }
 
