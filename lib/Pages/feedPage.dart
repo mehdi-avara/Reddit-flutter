@@ -70,8 +70,17 @@ class _feedPageState extends State<feedPage> {
                 suffixIcon: Icon(
                   Icons.search,
                   size: themeSizes.searchBarIcon,
+
                 ),
+
               ),
+            ),
+            trailing: IconButton(
+              icon: Icon(
+                Icons.view_headline,
+                size: themeSizes.searchBarIcon,
+              ),
+              onPressed: () {},
             ),
         ),
         ),
