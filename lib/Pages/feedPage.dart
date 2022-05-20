@@ -47,43 +47,49 @@ class _feedPageState extends State<feedPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.black,
-      appBar: AppBar(
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      themeMode:ThemeMode.system,
+      theme: ThemeClass.darkTheme,
+      darkTheme: ThemeClass.darkTheme,
+      home: Scaffold(
+        // backgroundColor: Colors.black,
+        appBar: AppBar(
 
-        backgroundColor: Colors.grey[900],
-        title: ListTile(
-          leading: CircleAvatar(
-            radius: themeSizes.avatarRadius,
-            backgroundColor: Colors.grey[850],
-            child: Image.asset(_user.profileImageUrl),
-          ),
-          title: TextField(
-            decoration: InputDecoration(
-              hintText: "Search",
-              hintStyle: TextStyle(
-                fontSize: themeSizes.searchBarHint,
-                color: Palette.textColor2,
-              ),
-              border: InputBorder.none,
-              suffixIcon: Icon(
-                Icons.search,
-                size: themeSizes.searchBarIcon,
-                color: Palette.textColor2,
+          // backgroundColor: Colors.grey[900],
+          title: ListTile(
+            leading: CircleAvatar(
+              radius: themeSizes.avatarRadius,
+              // backgroundColor: Colors.grey[850],
+              child: Image.asset(_user.profileImageUrl),
+            ),
+            title: TextField(
+              decoration: InputDecoration(
+                hintText: "Search",
+                hintStyle: TextStyle(
+                  fontSize: themeSizes.searchBarHint,
+                  // color: Palette.textColor2,
+                ),
+                border: InputBorder.none,
+                suffixIcon: Icon(
+                  Icons.search,
+                  size: themeSizes.searchBarIcon,
+                  // color: Palette.textColor2,
+                ),
               ),
             ),
-          ),
-      ),
-      ),
-      body: Center(
-        child: ListView.builder(
-          itemCount: posts.length,
-          itemBuilder: (context, index) {
-            return feedWidget( posts[index]);
-          },
         ),
+        ),
+        body: Center(
+          child: ListView.builder(
+            itemCount: posts.length,
+            itemBuilder: (context, index) {
+              return feedWidget( posts[index]);
+            },
+          ),
+        ),
+        bottomNavigationBar: _bottomNavigationBar(context),
       ),
-      bottomNavigationBar: _bottomNavigationBar(context),
     );
   }
 
@@ -93,14 +99,14 @@ class _feedPageState extends State<feedPage> {
         BottomNavigationBarItem(
           icon: Icon(
             Icons.home,
-            color: Colors.black,
+            // color: Colors.black,
           ),
           label: 'Home',
         ),
         BottomNavigationBarItem(
           icon: Icon(
             Icons.search,
-            color: Colors.black,
+            // color: Colors.black,
           ),
 
           label: 'Search',
@@ -108,7 +114,7 @@ class _feedPageState extends State<feedPage> {
         BottomNavigationBarItem(
           icon: Icon(
             Icons.add,
-            color: Colors.black,
+            // color: Colors.black,
           ),
           label: 'Add',
 
@@ -116,14 +122,14 @@ class _feedPageState extends State<feedPage> {
         BottomNavigationBarItem(
           icon: Icon(
             Icons.chat,
-            color: Colors.black,
+            // color: Colors.black,
           ),
           label: 'Chat',
         ),
         BottomNavigationBarItem(
           icon: Icon(
             Icons.notifications,
-            color: Colors.black,
+            // color: Colors.black,
           ),
           label: 'Notifications',
         ),
@@ -131,8 +137,9 @@ class _feedPageState extends State<feedPage> {
       onTap: (index) {
         onTapFunction(index,context);
       },
+      showUnselectedLabels: true,
 
-      showSelectedLabels: false,
+      showSelectedLabels: true,
     );
   }
 }
