@@ -67,10 +67,9 @@ class _feedPageState extends State<feedPage> {
                   fontSize: themeSizes.searchBarHint,
                 ),
                 border: InputBorder.none,
-                suffixIcon: Icon(
-                  Icons.search,
-                  size: themeSizes.searchBarIcon,
-
+                suffixIcon: IconButton(
+                  icon: Icon(Icons.search),
+                  onPressed: (){},
                 ),
 
               ),
