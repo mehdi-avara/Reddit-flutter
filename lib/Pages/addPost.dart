@@ -13,6 +13,8 @@ class addPost extends StatefulWidget {
 
 
 class _addPostState extends State<addPost> {
+  get body => null;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -48,24 +50,68 @@ class _addPostState extends State<addPost> {
             ),
           ],
         ),
-        body: Padding(
-            padding: EdgeInsets.only(top: 140.0, left: 40.0, right: 40.0,bottom: 10.0),
-            child:ListTile(
-              title: TextField(
-                decoration: InputDecoration(
-                    labelText: 'Title',
-                    hintText: 'Add a Title',
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20.0))),
-              ),
-              subtitle: TextField(
-                decoration: InputDecoration(
-                    labelText: 'Description',
-                    hintText: 'Add a Description',
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20.0))),
-              ),
-            )
+    body: Padding(
+
+      padding: EdgeInsets.only(top: 140.0, left: 40.0, right: 40.0,bottom: 10.0),
+            child:Column(
+              children: [
+                Row(
+                  children: [
+                    Text('Choose The Community',style: TextStyle(fontSize: 20.0,fontWeight: FontWeight.bold),),
+                    IconButton(
+                      icon: Icon(Icons.list),
+                      onPressed: () {
+                        ExpansionPanelList(
+                          expansionCallback: (int index, bool isExpanded) {},
+                          children: [
+                            ExpansionPanel(
+                              headerBuilder: (BuildContext context, bool isExpanded) {
+                                return ListTile(
+                                  title: Text('Item 1'),
+                                );
+                              },
+                              body: ListTile(
+                                title: Text('Item 1 child'),
+                                subtitle: Text('Details goes here'),
+                              ),
+                              isExpanded: true,
+                            ),
+                            ExpansionPanel(
+                              headerBuilder: (BuildContext context, bool isExpanded) {
+                                return ListTile(
+                                  title: Text('Item 2'),
+                                );
+                              },
+                              body: ListTile(
+                                title: Text('Item 2 child'),
+                                subtitle: Text('Details goes here'),
+                              ),
+                              isExpanded: false,
+                            ),
+                          ],
+                        );
+                      },
+                    ),
+                  ],
+                ),
+                ListTile(
+                  title: TextField(
+                    decoration: InputDecoration(
+                        labelText: 'Title',
+                        hintText: 'Add a Title',
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20.0))),
+                  ),
+                  subtitle: TextField(
+                    decoration: InputDecoration(
+                        labelText: 'Description',
+                        hintText: 'Add a Description',
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20.0))),
+                  ),
+                ),
+              ],
+            ),
         ),
       ),
     );
