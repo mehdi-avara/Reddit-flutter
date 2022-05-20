@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ui_flutter/Pages/addPost.dart';
 import 'package:ui_flutter/models/community.dart';
 import 'package:ui_flutter/models/post.dart';
 import 'package:ui_flutter/models/user.dart';
@@ -101,6 +102,7 @@ class _feedPageState extends State<feedPage> {
             Icons.search,
             color: Colors.black,
           ),
+
           label: 'Search',
         ),
         BottomNavigationBarItem(
@@ -109,6 +111,7 @@ class _feedPageState extends State<feedPage> {
             color: Colors.black,
           ),
           label: 'Add',
+
         ),
         BottomNavigationBarItem(
           icon: Icon(
@@ -125,7 +128,31 @@ class _feedPageState extends State<feedPage> {
           label: 'Notifications',
         ),
       ],
+      onTap: (index) {
+        onTapFunction(index);
+      },
+
       showSelectedLabels: false,
     );
   }
 }
+onTapFunction(int mode){
+  switch(mode){
+    case 0:
+      // Navigator.push(context, MaterialPageRoute(builder: (context)=>HomePage()));
+      break;
+      case 1:
+      // Navigator.push(context, MaterialPageRoute(builder: (context)=>SearchPage()));
+      break;
+      case 2:
+      Navigator.push(context, MaterialPageRoute(builder: (context)=>addPost()));
+      break;
+      case 3:
+      // Navigator.push(context, MaterialPageRoute(builder: (context)=>ChatPage()));
+      break;
+      case 4:
+      // Navigator.push(context, MaterialPageRoute(builder: (context)=>NotificationsPage()));
+      break;
+  }
+}
+
