@@ -19,11 +19,61 @@ class _SettingPageState extends State<SettingPage> {
       home: Scaffold(
         appBar: AppBar(
           title: Text('Setting'),
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back),
+            onPressed: () { //free for set function on it
+              Navigator.pop(context);
+            },
+          ),
         ),
         body: Center(
-          child: Text('Setting'),
+          child: ListView(
+            children: <Widget>[
+              Container(
+                decoration: BoxDecoration(
+                  border: Border(
+                    bottom: BorderSide(
+                      style: BorderStyle.solid,
+                      color: Colors.grey,
+                      width: 1.0,
+                    ),
+                  ),
+                ),
+                padding: EdgeInsets.all(10),
+                child: Text('Account settings',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+              ),
+              Container(
+                padding: EdgeInsets.all(10),
+                child: Text('Theme',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+              ),
+              Container(
+                padding: EdgeInsets.all(10),
+                child: Text('Language',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+              ),
+              Container(
+                padding: EdgeInsets.all(10),
+                child: Text('About',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+              ),
+              Container(
+                padding: EdgeInsets.all(10),
+                child: Text('Contact',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+              ),
+              Container(
+                padding: EdgeInsets.all(10),
+                child: Text('Privacy Policy',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+              ),
+              Container(
+                padding: EdgeInsets.all(10),
+                child: Text('Terms of Service',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+              ),
+              Container(
+                padding: EdgeInsets.all(10),
+                child: Text('Logout',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+              ),
+            ],
+          ),
         ),
-        bottomNavigationBar: widgets.bottomNavigationBar(context),
+        // bottomNavigationBar: widgets.bottomNavigationBar(context),
       ),
     );
   }
