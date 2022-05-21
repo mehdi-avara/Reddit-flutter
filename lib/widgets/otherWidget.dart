@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ui_flutter/Pages/SettingPage.dart';
 import 'package:ui_flutter/Pages/addPost.dart';
 import 'package:ui_flutter/Pages/communityPage.dart';
 class widgets extends StatelessWidget {
@@ -67,7 +68,7 @@ class widgets extends StatelessWidget {
       // Navigator.push(context, MaterialPageRoute(builder: (context)=>ChatPage()));
         break;
       case 4:
-      // Navigator.push(context, MaterialPageRoute(builder: (context)=>NotificationsPage()));
+      Navigator.push(context, MaterialPageRoute(builder: (context)=>SettingPage()));
         break;
     }
   }
