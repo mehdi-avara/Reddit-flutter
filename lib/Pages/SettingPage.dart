@@ -29,6 +29,12 @@ class _SettingPageState extends State<SettingPage> {
         body: Center(
           child: ListView(
             children: <Widget>[
+              IconButton(onPressed: (){} ,icon: Icon(Icons.settings),),
+              RaisedButton(onPressed: (){
+                Navigator.pop(context);
+              },
+                child: Text('Other Widget'),
+              ),
               Container(
                 decoration: BoxDecoration(
                   border: Border(
@@ -39,7 +45,8 @@ class _SettingPageState extends State<SettingPage> {
                     ),
                   ),
                 ),
-                padding: EdgeInsets.all(10),
+
+                padding: EdgeInsets.only(top: 10.0, bottom: 30.0, left: 10.0, right: 10.0),
                 child: Text('Account settings',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
               ),
               Container(
