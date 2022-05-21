@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:ui_flutter/widgets/otherWidget.dart';
 import '../config/themeSettings.dart';
 
 
@@ -23,6 +23,7 @@ class _SettingPageState extends State<SettingPage> {
         body: Center(
           child: Text('Setting'),
         ),
+        bottomNavigationBar: widgets.bottomNavigationBar(context),
       ),
     );
   }

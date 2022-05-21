@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ui_flutter/Pages/SettingPage.dart';
 import 'package:ui_flutter/Pages/addPost.dart';
 import 'package:ui_flutter/Pages/communityPage.dart';
+import 'package:ui_flutter/Pages/feedPage.dart';
 class widgets extends StatelessWidget {
   const widgets({Key key}) : super(key: key);
 
@@ -56,7 +57,7 @@ class widgets extends StatelessWidget {
   static onTapFunction(int mode,BuildContext context){
     switch(mode){
       case 0:
-      // Navigator.push(context, MaterialPageRoute(builder: (context)=>HomePage()));
+      Navigator.push(context, MaterialPageRoute(builder: (context)=>feedPage()));
         break;
       case 1:
       Navigator.push(context, MaterialPageRoute(builder: (context)=>communityPage()));
