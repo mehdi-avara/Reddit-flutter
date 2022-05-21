@@ -46,7 +46,7 @@ class _SettingPageState extends State<SettingPage> {
                           label: Text('Profile', style: TextStyle(color: Colors.grey, fontSize: 20.0),),
                           icon: Icon(Icons.person,color: Colors.red,size: 40,),
                           onPressed: () {
-                            print('Pressed');
+                            print('Pressed'); //this is free for set a function on it
                           }
                       ),
                   ),
@@ -59,43 +59,53 @@ class _SettingPageState extends State<SettingPage> {
                       label: Text('Create Community', style: TextStyle(fontSize: 20.0,color: Colors.grey),),
                       icon: Icon(Icons.people,size: 40,color: Colors.yellow,),
                       onPressed: () {
-                        print('Pressed');
+                        print('Pressed'); //this is free for set a function on it
                       },
                     ),
 
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.only(top: 2.0, bottom: 5.0, left: 5.0, right: 200.0),
                   child: Container(
                     padding: EdgeInsets.all(10),
-                    child: Text('Language',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+                    child: TextButton.icon(
+                      label: Text('Saved posts', style: TextStyle(fontSize: 20.0,color: Colors.grey),),
+                      icon: Icon(Icons.save_rounded,size: 40,color: Colors.green,),
+                      onPressed: () {
+                        print('Pressed'); //this is free for set a function on it
+                      },
+                    ),
                   ),
                 ),
-                Container(
-                  padding: EdgeInsets.all(10),
-                  child: Text('About',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
-                ),
-                Container(
-                  padding: EdgeInsets.all(10),
-                  child: Text('Contact',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),
+                Padding(
+                  padding: const EdgeInsets.only(top: 2.0, bottom: 5.0, left: 5.0, right: 230.0),
+                  child: Container(
+                    padding: EdgeInsets.all(10),
+                    child: TextButton.icon(
+                      label: Text('About us', style: TextStyle(fontSize: 20.0,color: Colors.grey),),
+                      icon: Icon(Icons.account_box,size: 40,color: Colors.blue,),
+                      onPressed: () {
+                        print('Pressed'); //this is free for set a function on it
+                      },
+                    ),
                   ),
                 ),
-                Container(
-                  padding: EdgeInsets.all(10),
-                  child: Text('Privacy Policy',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
-                ),
-                Container(
-                  padding: EdgeInsets.all(10),
-                  child: Text('Terms of Service',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
-                ),
-                Container(
-                  padding: EdgeInsets.all(10),
-                  child: Text('Logout',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
-                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 2.0, bottom: 5.0, left: 5.0, right: 250.0),
+                  child: Container(
+                    padding: EdgeInsets.all(10),
+                    child: TextButton.icon(
+                      label: Text('Theme', style: TextStyle(fontSize: 20.0,color: Colors.grey),),
+                      icon: Icon(Icons.collections_rounded,size: 40,color: Colors.orange,),
+                      onPressed: () {
+                        print('Pressed'); //this is free for set a function
+                      },
+                    ),
+                    ),
+                  ),
               ],
             ),
-
         ),
         // bottomNavigationBar: widgets.bottomNavigationBar(context),
       ),
