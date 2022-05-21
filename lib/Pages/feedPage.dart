@@ -54,36 +54,7 @@ class _feedPageState extends State<feedPage> {
       theme: ThemeClass.darkTheme,
       darkTheme: ThemeClass.darkTheme,
       home: Scaffold(
-        appBar: AppBar(
-
-          title: ListTile(
-            leading: CircleAvatar(
-              radius: themeSizes.avatarRadius,
-              child: Image.asset(_user.profileImageUrl),
-            ),
-            title: TextField(
-              decoration: InputDecoration(
-                hintText: "Search",
-                hintStyle: TextStyle(
-                  fontSize: themeSizes.searchBarHint,
-                ),
-                border: InputBorder.none,
-                suffixIcon: IconButton(
-                  icon: Icon(Icons.search),
-                  onPressed: (){},
-                ),
-
-              ),
-            ),
-            trailing: IconButton(
-              icon: Icon(
-                Icons.view_headline,
-                size: themeSizes.searchBarIcon,
-              ),
-              onPressed: () {},
-            ),
-        ),
-        ),
+        appBar: widgets.appBar(_user),
         body: Center(
           child: ListView.builder(
             itemCount: posts.length,
