@@ -11,7 +11,7 @@ class feedWidget extends StatelessWidget {
       padding: EdgeInsets.all(10),
       margin: EdgeInsets.fromLTRB(0, 2, 0, 0),
       decoration: BoxDecoration(
-        color: Palette.widgetBackground,
+        color: ThemeData.dark().cardColor,
         // borderRadius: BorderRadius.circular(10),
         ),
 
@@ -27,8 +27,12 @@ class feedWidget extends StatelessWidget {
   Container _postPart(String Title,String description){
     return Container(
       child: ListTile(
-        title: Text(Title,style: TextStyle(fontSize: themeSizes.communityName,fontWeight: FontWeight.bold,color: Palette.textColor1),),
-        subtitle: Text(description,style: TextStyle(fontSize: themeSizes.userName,color: Palette.textColor2),),
+        title: Text(Title,style: TextStyle(fontSize: themeSizes.communityName,fontWeight: FontWeight.bold,
+            // color: Palette.textColor1
+        ),),
+        subtitle: Text(description,style: TextStyle(fontSize: themeSizes.userName,
+            // color: Palette.textColor2
+        ),),
       ),
     );
   }
@@ -37,31 +41,31 @@ class feedWidget extends StatelessWidget {
       child: ListTile(
         leading: CircleAvatar(
           radius: themeSizes.avatarRadius,
-          backgroundColor: Colors.grey[850],
+          // backgroundColor: Colors.grey[850],
           child: imagePath != null
               ? Image.asset(imagePath)
               : Icon(
             Icons.person,
             size: themeSizes.avatarIconSize,
-            color: Colors.white,
+            // color: Colors.white,
           ),
         ),
         title: Text(title,
           style: TextStyle(
             fontSize: themeSizes.communityName,
             // fontWeight: FontWeight.bold,
-            color: Palette.textColor1,
+            // color: Palette.textColor1,
           ),
         ),
         subtitle: Text(subtitle
           , style: TextStyle(
             fontSize: themeSizes.userName,
-            color: Palette.textColor2,
+            // color: Palette.textColor2,
           ),
         ),
         trailing: Icon(
           Icons.more_vert,
-          color: Palette.textColor2,
+          // color: Palette.textColor2,
         ),
         dense: true,
         visualDensity: VisualDensity(vertical: -4.0),
@@ -79,15 +83,17 @@ class feedWidget extends StatelessWidget {
               child: Row(
                 children: <Widget>[
                   IconButton(
-                    icon:Icon(Icons.arrow_upward
-                      ,color: Palette.textColor2,
+                    icon:Icon(Icons.arrow_upward,
+                      // color: Palette.textColor2,
                     ),
                     onPressed: (){},
                     iconSize: 15,),
-                  Text("vote",style: TextStyle(color: Colors.white,fontSize: 10),),
+                  Text("vote",style: TextStyle(
+                      // color: Colors.white,
+                      fontSize: 10),),
                   IconButton(
-                    icon:Icon(Icons.arrow_downward
-                      ,color: Palette.textColor2,
+                    icon:Icon(Icons.arrow_downward,
+                      // color: Palette.textColor2,
                     ),
                     onPressed: (){},
                     iconSize: 15,),
@@ -101,12 +107,14 @@ class feedWidget extends StatelessWidget {
               child: Row(
                 children: <Widget>[
                   IconButton(
-                    icon:Icon(Icons.comment
-                      ,color: Palette.textColor2,
+                    icon:Icon(Icons.comment,
+                      // color: Palette.textColor2,
                     ),
                     onPressed: (){},
                     iconSize: 15,),
-                  Text("comment",style: TextStyle(color: Colors.white,fontSize: 10),),
+                  Text("comment",style: TextStyle(
+                      // color: Colors.white,
+                      fontSize: 10),),
 
                 ],
               ),
@@ -118,15 +126,17 @@ class feedWidget extends StatelessWidget {
               child: Row(
                 children: <Widget>[
                   IconButton(
-                    icon:Icon(Icons.share
-                      ,color: Palette.textColor2,
+                    icon:Icon(Icons.share,
+                      // color: Palette.textColor2,
                     ),
                     onPressed: (){},
                     iconSize: 15,),
-                  Text("share",style: TextStyle(color: Colors.white,fontSize: 10),),
+                  Text("share",style: TextStyle(
+                      // color: Colors.white,
+                      fontSize: 10),),
                   IconButton(
-                    icon:Icon(Icons.print
-                      ,color: Palette.textColor2,
+                    icon:Icon(Icons.print,
+                      // color: Palette.textColor2,
                     ),
                     onPressed: (){},
                     iconSize: 15,)

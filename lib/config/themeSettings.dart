@@ -45,6 +45,7 @@ class ThemeClass{
       colorScheme: ColorScheme.dark(),
       appBarTheme: AppBarTheme(
         backgroundColor: Colors.black,
-      )
+      ),
+
   );
 }
