@@ -100,20 +100,13 @@ class widgets extends StatelessWidget {
             ),
           ),
         ),
-        trailing: IconButton(
-          icon: Icon(
-            Icons.view_headline,
-            size: themeSizes.searchBarIcon,
-          ),
-          onPressed: () {
-            popUpMenu(context);
-          },
-        ),
+        trailing: popUpMenu(context),
       ),
     );
   }
   static popUpMenu(BuildContext context) {
     return PopupMenuButton<int>(
+      icon: Icon(Icons.view_headline),
       itemBuilder: (context) => [
         PopupMenuItem(
           value: 1,
