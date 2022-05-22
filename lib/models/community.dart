@@ -5,6 +5,7 @@ class Community{
   String get imageUrl => _imageUrl;
 
   Community(this._name);
+  Community.withProfileImageUrl(this._name, this._imageUrl);
 
   String get name => _name;
 

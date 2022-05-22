@@ -8,7 +8,34 @@ class communityWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.all(10),
+      margin: EdgeInsets.fromLTRB(0, 2, 0, 0),
+      decoration: BoxDecoration(
+        color: ThemeData.dark().cardColor,
+        // borderRadius: BorderRadius.circular(10),
+      ),
 
+      child: ListTile(
+        leading: CircleAvatar(
+          radius: 20,
+          backgroundImage: AssetImage(_community.imageUrl),
+        ),
+        title: Text(
+          _community.name,
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+
+        trailing: IconButton(
+          icon: Icon(
+            Icons.star_border,
+            size: 30,
+          ),
+          onPressed: () {},
+        ),
+      ),
     );
   }
 }

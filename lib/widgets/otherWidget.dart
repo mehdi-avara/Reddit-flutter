@@ -3,6 +3,9 @@ import 'package:ui_flutter/Pages/SettingPage.dart';
 import 'package:ui_flutter/Pages/addPost.dart';
 import 'package:ui_flutter/Pages/communityPage.dart';
 import 'package:ui_flutter/Pages/feedPage.dart';
+import 'package:ui_flutter/models/user.dart';
+import '../config/themeSettings.dart';
+
 class widgets extends StatelessWidget {
   const widgets({Key key}) : super(key: key);
 
@@ -73,6 +76,37 @@ class widgets extends StatelessWidget {
         break;
     }
   }
+static AppBar appBar(User _user){
+    return AppBar(
 
+  title: ListTile(
+  leading: CircleAvatar(
+  radius: themeSizes.avatarRadius,
+  child: Image.asset(_user.profileImageUrl),
+  ),
+  title: TextField(
+  decoration: InputDecoration(
+  hintText: "Search",
+  hintStyle: TextStyle(
+  fontSize: themeSizes.searchBarHint,
+  ),
+  border: InputBorder.none,
+  suffixIcon: IconButton(
+  icon: Icon(Icons.search),
+  onPressed: (){},
+  ),
+
+  ),
+  ),
+  trailing: IconButton(
+  icon: Icon(
+  Icons.view_headline,
+  size: themeSizes.searchBarIcon,
+  ),
+  onPressed: () {},
+  ),
+  ),
+  );
+}
 
 }
