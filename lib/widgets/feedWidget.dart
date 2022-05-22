@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:ui_flutter/Pages/SettingPage.dart';
+import 'package:ui_flutter/Pages/loginSignUpPage.dart';
 import 'package:ui_flutter/config/themeSettings.dart';
 import 'package:ui_flutter/models/post.dart';
 
@@ -17,7 +19,7 @@ class feedWidget extends StatelessWidget {
 
       child: Column(
         children: <Widget>[
-          _profileListTile(_post.user.name, _post.community.name, _post.user.profileImageUrl),
+          _profileListTile(_post,context),
           _postPart(_post.title,_post.discription),
           _belowPostPart(),
         ],
@@ -36,37 +38,34 @@ class feedWidget extends StatelessWidget {
       ),
     );
   }
-  Container _profileListTile(String title, String subtitle, String imagePath) {
+  Container _profileListTile(Post post,BuildContext context) {
     return Container(
       child: ListTile(
         leading: CircleAvatar(
           radius: themeSizes.avatarRadius,
           // backgroundColor: Colors.grey[850],
-          child: imagePath != null
-              ? Image.asset(imagePath)
+          child: post.imageUrl != null
+              ? Image.asset(post.imageUrl)
               : Icon(
             Icons.person,
             size: themeSizes.avatarIconSize,
             // color: Colors.white,
           ),
         ),
-        title: Text(title,
+        title: Text(post.title,
           style: TextStyle(
             fontSize: themeSizes.communityName,
             // fontWeight: FontWeight.bold,
             // color: Palette.textColor1,
           ),
         ),
-        subtitle: Text(subtitle
+        subtitle: Text(post.discription
           , style: TextStyle(
             fontSize: themeSizes.userName,
             // color: Palette.textColor2,
           ),
         ),
-        trailing: Icon(
-          Icons.more_vert,
-          // color: Palette.textColor2,
-        ),
+        trailing: popUpMenu(context),
         dense: true,
         visualDensity: VisualDensity(vertical: -4.0),
       ),
@@ -148,8 +147,40 @@ class feedWidget extends StatelessWidget {
       ),
     );
   }
-}
-class homeWidget{
-
+  static popUpMenu(BuildContext context) {
+    return PopupMenuButton<int>(
+      icon: Icon(Icons.more_vert),
+      itemBuilder: (context) => [
+        PopupMenuItem(
+          value: 1,
+          child: Text("Post"),
+        ),
+        PopupMenuItem(
+          value: 2,
+          child: Text("Save"),
+        ),
+        PopupMenuItem(
+          value: 3,
+          child: Text("Not Interested"),
+        ),
+      ],
+      onSelected: (value) {
+        switch (value) {
+          case 1:
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => SettingPage()));
+            break;
+          case 2:
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => SettingPage()));
+            break;
+          case 3:
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => LoginSignupScreen()));
+            break;
+        }
+      },
+    );
+  }
 
 }

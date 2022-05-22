@@ -11,7 +11,7 @@ class Post{
   String _postId;
   String _title;
   String _discription;
-  List<String> _imageUrl;
+  String _imageUrl;
   String _videoUrl;
   User _user;
   Community _community;
@@ -24,7 +24,7 @@ class Post{
 
   User get user => _user;
 
-  List<String> get imageUrl => _imageUrl;
+  String get imageUrl => _imageUrl;
 
   String get discription => _discription;
 
@@ -42,7 +42,7 @@ class Post{
     _user = value;
   }
 
-  set imageUrl(List<String> value) {
+  set imageUrl(String value) {
     _imageUrl = value;
   }
 
