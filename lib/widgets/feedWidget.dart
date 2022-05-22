@@ -75,8 +75,7 @@ class feedWidget extends StatelessWidget {
     return Container(
       child:Row(
         children: <Widget>[
-          Expanded(
-            child: Container(
+          Container(
               // color: Colors.green,
               height: 30,
               child: Row(
@@ -99,7 +98,6 @@ class feedWidget extends StatelessWidget {
                 ],
               ),
             ),
-          ),
           Expanded(
             child: Container(
               height: 30,
@@ -119,8 +117,8 @@ class feedWidget extends StatelessWidget {
               ),
             ),
           ),
-          Expanded(
-            child: Container(
+
+        Container(
               height: 30,
               child: Row(
                 children: <Widget>[
@@ -142,7 +140,6 @@ class feedWidget extends StatelessWidget {
                 ],
               ),
             ),
-          ),
         ],
       ),
     );
