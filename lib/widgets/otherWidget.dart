@@ -80,7 +80,7 @@ class widgets extends StatelessWidget {
     }
   }
 
-  static AppBar appBar(User _user) {
+  static AppBar appBar(User _user,BuildContext context) {
     return AppBar(
       title: ListTile(
         leading: CircleAvatar(
@@ -105,9 +105,45 @@ class widgets extends StatelessWidget {
             Icons.view_headline,
             size: themeSizes.searchBarIcon,
           ),
-          onPressed: () {},
+          onPressed: () {
+            popUpMenu(context);
+          },
         ),
       ),
+    );
+  }
+  static popUpMenu(BuildContext context) {
+    return PopupMenuButton<int>(
+      itemBuilder: (context) => [
+        PopupMenuItem(
+          value: 1,
+          child: Text("Edit Profile"),
+        ),
+        PopupMenuItem(
+          value: 2,
+          child: Text("Settings"),
+        ),
+        PopupMenuItem(
+          value: 3,
+          child: Text("Logout"),
+        ),
+      ],
+      onSelected: (value) {
+        switch (value) {
+          case 1:
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => SettingPage()));
+            break;
+          case 2:
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => SettingPage()));
+            break;
+          case 3:
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => SettingPage()));
+            break;
+        }
+      },
     );
   }
 }

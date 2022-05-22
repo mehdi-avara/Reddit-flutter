@@ -54,7 +54,7 @@ class _feedPageState extends State<feedPage> {
       theme: ThemeClass.darkTheme,
       darkTheme: ThemeClass.darkTheme,
       home: Scaffold(
-        appBar: widgets.appBar(_user),
+        appBar: widgets.appBar(_user, context),
         body: Center(
           child: ListView.builder(
             itemCount: posts.length,
