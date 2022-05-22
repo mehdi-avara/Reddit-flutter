@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:ui_flutter/Pages/SettingPage.dart';
 import '../config/themeSettings.dart';
 
 class addPost extends StatefulWidget {
@@ -67,40 +68,7 @@ class _addPostState extends State<addPost> {
                       child: Row(
                         children: [
                           Text('Choose The Community',style: TextStyle(fontSize: 20.0,fontWeight: FontWeight.bold),),
-                          IconButton(
-                            icon: Icon(Icons.list),
-                            onPressed: () {
-                              ExpansionPanelList(
-                                expansionCallback: (int index, bool isExpanded) {},
-                                children: [
-                                  ExpansionPanel(
-                                    headerBuilder: (BuildContext context, bool isExpanded) {
-                                      return ListTile(
-                                        title: Text('Item 1'),
-                                      );
-                                    },
-                                    body: ListTile(
-                                      title: Text('Item 1 child'),
-                                      subtitle: Text('Details goes here'),
-                                    ),
-                                    isExpanded: true,
-                                  ),
-                                  ExpansionPanel(
-                                    headerBuilder: (BuildContext context, bool isExpanded) {
-                                      return ListTile(
-                                        title: Text('Item 2'),
-                                      );
-                                    },
-                                    body: ListTile(
-                                      title: Text('Item 2 child'),
-                                      subtitle: Text('Details goes here'),
-                                    ),
-                                    isExpanded: false,
-                                  ),
-                                ],
-                              );
-                            },
-                          ),
+                          Expanded(child:popUpMenu(context)),
                         ],
                       ),
                     ),
@@ -132,4 +100,49 @@ class _addPostState extends State<addPost> {
 
     );
   }
+  static popUpMenu(BuildContext context) {
+    return PopupMenuButton<int>(
+      icon: Icon(Icons.list),
+      itemBuilder: (context) => [
+        PopupMenuItem(
+          value: 1,
+          child: ListTile(
+            title: Text('Item 1 child'),
+            subtitle: Text('Details goes here'),
+          ),
+        ),
+        PopupMenuItem(
+          value: 2,
+          child: ListTile(
+            title: Text('Item 2 child'),
+            subtitle: Text('Details goes here'),
+          ),
+        ),
+        PopupMenuItem(
+          value: 3,
+          child: ListTile(
+            title: Text('Item 3 child'),
+            subtitle: Text('Details goes here'),
+    )
+        ),
+      ],
+      onSelected: (value) {
+        switch (value) {
+          case 1:
+            // Navigator.push(
+            //     context, MaterialPageRoute(builder: (context) => SettingPage()));
+            break;
+          case 2:
+            // Navigator.push(
+                // context, MaterialPageRoute(builder: (context) => SettingPage()));
+            break;
+          case 3:
+            // Navigator.push(
+                // context, MaterialPageRoute(builder: (context) => LoginSignupScreen()));
+            break;
+        }
+      },
+    );
+  }
+
 }
