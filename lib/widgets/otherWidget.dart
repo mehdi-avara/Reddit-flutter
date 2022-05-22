@@ -3,6 +3,7 @@ import 'package:ui_flutter/Pages/SettingPage.dart';
 import 'package:ui_flutter/Pages/addPost.dart';
 import 'package:ui_flutter/Pages/communityPage.dart';
 import 'package:ui_flutter/Pages/feedPage.dart';
+import 'package:ui_flutter/Pages/loginSignUpPage.dart';
 import 'package:ui_flutter/models/user.dart';
 import '../config/themeSettings.dart';
 
@@ -133,7 +134,7 @@ class widgets extends StatelessWidget {
             break;
           case 3:
             Navigator.push(
-                context, MaterialPageRoute(builder: (context) => SettingPage()));
+                context, MaterialPageRoute(builder: (context) => LoginSignupScreen()));
             break;
         }
       },
