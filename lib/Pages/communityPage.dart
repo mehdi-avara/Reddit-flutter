@@ -19,6 +19,22 @@ class _communityPageState extends State<communityPage> {
     new Community.withProfileImageUrl("Dart", "assets/images/dart.png"),
     new Community.withProfileImageUrl("React", "assets/images/react.png"),
     new Community.withProfileImageUrl("Vue", "assets/images/vue.png"),
+    new Community.withProfileImageUrl("Flutter", "assets/images/flutter.png"),
+    new Community.withProfileImageUrl("Dart", "assets/images/dart.png"),
+    new Community.withProfileImageUrl("React", "assets/images/react.png"),
+    new Community.withProfileImageUrl("Vue", "assets/images/vue.png"),
+    new Community.withProfileImageUrl("Flutter", "assets/images/flutter.png"),
+    new Community.withProfileImageUrl("Dart", "assets/images/dart.png"),
+    new Community.withProfileImageUrl("React", "assets/images/react.png"),
+    new Community.withProfileImageUrl("Vue", "assets/images/vue.png"),
+    new Community.withProfileImageUrl("Flutter", "assets/images/flutter.png"),
+    new Community.withProfileImageUrl("Dart", "assets/images/dart.png"),
+    new Community.withProfileImageUrl("React", "assets/images/react.png"),
+    new Community.withProfileImageUrl("Vue", "assets/images/vue.png"),
+    new Community.withProfileImageUrl("Flutter", "assets/images/flutter.png"),
+    new Community.withProfileImageUrl("Dart", "assets/images/dart.png"),
+    new Community.withProfileImageUrl("React", "assets/images/react.png"),
+    new Community.withProfileImageUrl("Vue", "assets/images/vue.png"),
   ];
   @override
   Widget build(BuildContext context) {
