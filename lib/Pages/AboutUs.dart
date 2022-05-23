@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:ui_flutter/widgets/otherWidget.dart';
 
+import '../config/themeSettings.dart';
+
 class AboutUs extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      themeMode:ThemeMode.system,
+      theme: ThemeClass.darkTheme,
+      darkTheme: ThemeClass.darkTheme,
     home:Scaffold(
       appBar: AppBar(
         title: Text('About Us'),
@@ -87,21 +93,30 @@ class AboutUs extends StatelessWidget {
                   ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(top:10.0, bottom: 10.0, left: 100.0, right: 20.0),
-                child: TextButton(
-                  onPressed: () {
-                     Navigator.push(
-                       context,
-                       MaterialPageRoute(builder: (context) => MoreInfo()),
-                     );
-                  },
-                  child: Text(
-                    'More',
-                    style: TextStyle(
-                      fontSize: 50.0,
-                      fontWeight: FontWeight.w800,
-                      color: Colors.amber,
+
+              Center(
+                child: SizedBox(
+                  height: 70,
+                  width: 100,
+                  child: TextButton(
+                    onPressed: () {
+                       Navigator.push(
+                         context,
+                         MaterialPageRoute(builder: (context) => MoreInfo()),
+                       );
+                    },
+                    style: TextButton.styleFrom(
+                      primary: Colors.white,
+                      backgroundColor: Colors.green,
+                      onSurface: Colors.grey,
+                    ),
+                    child: Text(
+                      'More',
+                      style: TextStyle(
+                        fontSize: 25.0,
+                        fontWeight: FontWeight.w800,
+                        color: Colors.amber,
+                      ),
                     ),
                   ),
                 ),
