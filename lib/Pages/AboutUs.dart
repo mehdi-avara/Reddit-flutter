@@ -32,7 +32,7 @@ class AboutUs extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 30.0,
                     fontWeight: FontWeight.bold,
-                    color: Colors.greenAccent,
+                    color: Colors.orangeAccent,
                   ),
                 ),
               ),
@@ -43,7 +43,7 @@ class AboutUs extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 20.0,
                     fontWeight: FontWeight.bold,
-                    color: Colors.yellowAccent,
+                    color: Colors.white,
                   ),
                 ),
               ),
@@ -54,7 +54,7 @@ class AboutUs extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 25.0,
                     fontWeight: FontWeight.w700,
-                    color: Colors.redAccent,
+                    color: Colors.white70,
                   ),
                 ),
               ),
@@ -65,7 +65,7 @@ class AboutUs extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 30.0,
                     fontWeight: FontWeight.bold,
-                    color: Colors.greenAccent,
+                    color: Colors.orangeAccent,
                   ),
                 ),
               ),
@@ -78,7 +78,7 @@ class AboutUs extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 20.0,
                     fontWeight: FontWeight.bold,
-                    color: Colors.yellowAccent,
+                    color: Colors.white,
                   ),
               )
               ),
@@ -89,14 +89,14 @@ class AboutUs extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 25.0,
                     fontWeight: FontWeight.w700,
-                    color: Colors.redAccent,
+                    color: Colors.white70,
                   ),
                 ),
               ),
 
               Center(
                 child: SizedBox(
-                  height: 70,
+                  height: 60,
                   width: 100,
                   child: TextButton(
                     onPressed: () {
@@ -107,7 +107,7 @@ class AboutUs extends StatelessWidget {
                     },
                     style: TextButton.styleFrom(
                       primary: Colors.white,
-                      backgroundColor: Colors.green,
+                      backgroundColor: Colors.blueGrey,
                       onSurface: Colors.grey,
                     ),
                     child: Text(
@@ -135,11 +135,39 @@ class MoreInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      themeMode:ThemeMode.system,
+      theme: ThemeClass.darkTheme,
+      darkTheme: ThemeClass.darkTheme,
       home: Scaffold(
         appBar: AppBar(
+          centerTitle: true,
           title: Text('More Information'),
-          backgroundColor: Colors.greenAccent,
-        )
+          backgroundColor: Colors.black12,
+        ),
+        body: Center(
+          child: Column(
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.only(top:50.0, bottom: 10.0, left: 70.0, right: 20.0),
+                child: Text(
+                  '''Im Morteza Mahdavi and my colleague is Mehdi Avara.
+We Both from bushehr and and study in SBU.
+                  
+for AP project we were grouped and creating this app with flutter and java.
+                  
+our favorite field is machine learning and we hope create ai projects with each other
+in the future.'''
+                  ,style: TextStyle(
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white70,
+                  ),
+                ),
+              )
+            ]
+          )
+        ),
       ),
     );
   }
