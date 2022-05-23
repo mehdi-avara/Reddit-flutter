@@ -1,7 +1,4 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
-
 
 class AboutUs extends StatelessWidget {
   @override
@@ -15,4 +12,7 @@ class AboutUs extends StatelessWidget {
       ),
     );
   }
+
+
+
 }
