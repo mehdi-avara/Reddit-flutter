@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:ui_flutter/widgets/otherWidget.dart';
 
 class AboutUs extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return MaterialApp(
+    home:Scaffold(
       appBar: AppBar(
         title: Text('About Us'),
       ),
@@ -40,7 +42,7 @@ class AboutUs extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top:10.0, bottom: 10.0, left: 120.0, right: 20.0),
+                padding: const EdgeInsets.only(top:10.0, bottom: 40.0, left: 120.0, right: 20.0),
                 child: Text(
                   '+989395991023',
                   style: TextStyle(
@@ -49,14 +51,81 @@ class AboutUs extends StatelessWidget {
                     color: Colors.redAccent,
                   ),
                 ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top:10.0, bottom: 10.0, left: 100.0, right: 20.0),
+                child: Text(
+                  'Morteza Mahdavi',
+                  style: TextStyle(
+                    fontSize: 30.0,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.greenAccent,
+                  ),
+                ),
+              ),
+
+
+              Padding(
+                padding:const EdgeInsets.only(top: 10.0, bottom: 10.0, left: 80.0, right: 20.0),
+                child: Text(
+                  'seyedmorteza2400@gmail.com',
+                  style: TextStyle(
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.yellowAccent,
+                  ),
               )
-            ] ,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top:10.0, bottom: 40.0, left: 120.0, right: 20.0),
+                child: Text(
+                  '+989036268283',
+                  style: TextStyle(
+                    fontSize: 25.0,
+                    fontWeight: FontWeight.w700,
+                    color: Colors.redAccent,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top:10.0, bottom: 10.0, left: 100.0, right: 20.0),
+                child: TextButton(
+                  onPressed: () {
+                     Navigator.push(
+                       context,
+                       MaterialPageRoute(builder: (context) => MoreInfo()),
+                     );
+                  },
+                  child: Text(
+                    'More',
+                    style: TextStyle(
+                      fontSize: 50.0,
+                      fontWeight: FontWeight.w800,
+                      color: Colors.amber,
+                    ),
+                  ),
+                ),
+                )
+        ]
           ),
         ),
       ),
+      bottomNavigationBar: widgets.bottomNavigationBar(context),
+    ),
     );
   }
+}
 
-
-
+class MoreInfo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('More Information'),
+          backgroundColor: Colors.greenAccent,
+        )
+      ),
+    );
+  }
 }
