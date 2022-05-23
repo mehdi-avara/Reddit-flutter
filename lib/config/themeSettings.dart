@@ -11,8 +11,9 @@ class Palette{
   static const Color backgroundColor = Color(0xFFECF3F9);
   static const Color widgetBackground = Color(0xFF2A2929);
   static const Color homeWidgetBackground = Color(0xFF211D1D);
-
 }
+
+
 class themeSizes{
   static const double fontTitle1 = 18.0;
   static const double fontTitle2 = 16.0;
