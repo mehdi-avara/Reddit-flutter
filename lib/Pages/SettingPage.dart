@@ -4,6 +4,7 @@ import 'package:ui_flutter/Pages/feedPage.dart';
 import 'package:ui_flutter/Pages/loginSignUpPage.dart';
 import 'package:ui_flutter/widgets/otherWidget.dart';
 import '../config/themeSettings.dart';
+import 'AboutUs.dart';
 
 
 class SettingPage extends StatefulWidget {
@@ -86,7 +87,7 @@ class _SettingPageState extends State<SettingPage> {
                       label: Text('About us', style: TextStyle(fontSize: 20.0,color: Colors.grey),),
                       icon: Icon(Icons.account_box,size: 40,color: Colors.blue,),
                       onPressed: () {
-                      // Navigator.push(context, MaterialPageRoute(builder: (context) => OtherWidget()));
+                        print('Pressed'); //this is free for set a function on it
                       },
                     ),
                   ),
