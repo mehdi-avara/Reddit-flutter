@@ -54,6 +54,33 @@ class _ProfileState extends State<Profile> {
                   ),
                 ),
               ),
+              Center(
+                child: SizedBox(
+                  width: 200,
+                  height: 50,
+                  child: TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => EditInfo()),
+                      );
+                    },
+                    style: TextButton.styleFrom(
+                      primary: Colors.white,
+                      backgroundColor: Colors.blueGrey,
+                      onSurface: Colors.grey,
+                    ),
+
+                    child: Text(
+                      'Edit Profile',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+                )
             ],
           ),
         ),
