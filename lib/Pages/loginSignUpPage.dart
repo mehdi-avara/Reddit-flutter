@@ -14,7 +14,7 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Palette.backgroundColor,
+      backgroundColor: Palette.homeWidgetBackground,
       body: Stack(
         children: [
           Positioned(

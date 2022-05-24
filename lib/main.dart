@@ -5,7 +5,7 @@ import 'package:ui_flutter/Pages/loginSignUpPage.dart';
 
 void main() {
   runApp(const App());
-  // runApp(const LoginSignUpUI());
+  // runApp(const LoginSignupUIignUpUI());
 }
 class LoginSignupUI extends StatelessWidget {
   const LoginSignupUI({Key key}) : super(key: key);
