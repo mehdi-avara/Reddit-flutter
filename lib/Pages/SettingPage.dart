@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ui_flutter/Pages/Profile.dart';
 import 'package:ui_flutter/Pages/addPost.dart';
 import 'package:ui_flutter/Pages/feedPage.dart';
 import 'package:ui_flutter/Pages/loginSignUpPage.dart';
@@ -47,7 +48,8 @@ class _SettingPageState extends State<SettingPage> {
                           label: Text('Profile', style: TextStyle(color: Colors.grey, fontSize: 20.0),),
                           icon: Icon(Icons.person,color: Colors.red,size: 40,),
                           onPressed: () {
-                            print('Pressed'); //this is free for set a function on it
+                            Navigator.push(
+                                context, MaterialPageRoute(builder: (context) => Profile())); //this is free for set a function on it
                           }
                       ),
                   ),
