@@ -8,25 +8,25 @@ class AboutUs extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      themeMode:ThemeMode.system,
+      themeMode: ThemeMode.system,
       theme: ThemeClass.darkTheme,
       darkTheme: ThemeClass.darkTheme,
-    home:Scaffold(
-      appBar: AppBar(
-        title: Text('About Us'),
-      ),
-      body: Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage('assets/images/AboutUs2.jpg'),
-            fit: BoxFit.cover,
-          ),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('About Us'),
         ),
-        child: Center(
-          child: ListView(
-            children:<Widget>[
-              Padding(
-                padding: const EdgeInsets.only(top: 10.0, bottom: 10.0, left: 130.0, right: 20.0),
+        body: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('assets/images/AboutUs2.jpg'),
+              fit: BoxFit.cover,
+            ),
+          ),
+          child: Center(
+            child: ListView(children: <Widget>[
+              Container(
+                alignment: Alignment.topCenter,
+                padding: EdgeInsets.all(10),
                 child: Text(
                   'Mehdi Avara',
                   style: TextStyle(
@@ -36,8 +36,9 @@ class AboutUs extends StatelessWidget {
                   ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: 10.0, bottom: 10.0, left: 110.0, right: 20.0),
+              Container(
+                alignment: Alignment.topCenter,
+                padding: EdgeInsets.all(10),
                 child: Text(
                   'avaramehdi@gmail.com',
                   style: TextStyle(
@@ -47,8 +48,9 @@ class AboutUs extends StatelessWidget {
                   ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(top:10.0, bottom: 40.0, left: 120.0, right: 20.0),
+              Container(
+                alignment: Alignment.topCenter,
+                padding: EdgeInsets.all(10),
                 child: Text(
                   '+989395991023',
                   style: TextStyle(
@@ -58,8 +60,9 @@ class AboutUs extends StatelessWidget {
                   ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(top:10.0, bottom: 10.0, left: 100.0, right: 20.0),
+              Container(
+                alignment: Alignment.topCenter,
+                padding: EdgeInsets.all(10),
                 child: Text(
                   'Morteza Mahdavi',
                   style: TextStyle(
@@ -69,10 +72,9 @@ class AboutUs extends StatelessWidget {
                   ),
                 ),
               ),
-
-
-              Padding(
-                padding:const EdgeInsets.only(top: 10.0, bottom: 10.0, left: 80.0, right: 20.0),
+              Container(
+                alignment: Alignment.topCenter,
+                padding: EdgeInsets.all(10),
                 child: Text(
                   'seyedmorteza2400@gmail.com',
                   style: TextStyle(
@@ -80,10 +82,11 @@ class AboutUs extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                   ),
-              )
+                ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(top:10.0, bottom: 40.0, left: 120.0, right: 20.0),
+              Container(
+                alignment: Alignment.topCenter,
+                padding: EdgeInsets.all(10),
                 child: Text(
                   '+989036268283',
                   style: TextStyle(
@@ -93,17 +96,16 @@ class AboutUs extends StatelessWidget {
                   ),
                 ),
               ),
-
               Center(
                 child: SizedBox(
                   height: 60,
                   width: 100,
                   child: TextButton(
                     onPressed: () {
-                       Navigator.push(
-                         context,
-                         MaterialPageRoute(builder: (context) => MoreInfo()),
-                       );
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => MoreInfo()),
+                      );
                     },
                     style: TextButton.styleFrom(
                       primary: Colors.white,
@@ -120,13 +122,12 @@ class AboutUs extends StatelessWidget {
                     ),
                   ),
                 ),
-                )
-        ]
+              )
+            ]),
           ),
         ),
+        bottomNavigationBar: widgets.bottomNavigationBar(context),
       ),
-      bottomNavigationBar: widgets.bottomNavigationBar(context),
-    ),
     );
   }
 }
@@ -136,7 +137,7 @@ class MoreInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      themeMode:ThemeMode.system,
+      themeMode: ThemeMode.system,
       theme: ThemeClass.darkTheme,
       darkTheme: ThemeClass.darkTheme,
       home: Scaffold(
@@ -146,28 +147,26 @@ class MoreInfo extends StatelessWidget {
           backgroundColor: Colors.black12,
         ),
         body: Center(
-          child: Column(
-            children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.only(top:50.0, bottom: 10.0, left: 70.0, right: 20.0),
-                child: Text(
-                  '''Im Morteza Mahdavi and my colleague is Mehdi Avara.
+            child: Column(children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.only(
+                top: 50.0, bottom: 10.0, left: 70.0, right: 20.0),
+            child: Text(
+              '''Im Morteza Mahdavi and my colleague is Mehdi Avara.
 We Both from bushehr and and study in SBU.
                   
 for AP project we were grouped and creating this app with flutter and java.
                   
 our favorite field is machine learning and we hope create ai projects with each other
-in the future.'''
-                  ,style: TextStyle(
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white70,
-                  ),
-                ),
-              )
-            ]
+in the future.''',
+              style: TextStyle(
+                fontSize: 20.0,
+                fontWeight: FontWeight.bold,
+                color: Colors.white70,
+              ),
+            ),
           )
-        ),
+        ])),
       ),
     );
   }
