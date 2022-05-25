@@ -25,7 +25,7 @@ class _ProfileState extends State<Profile> {
           child: ListView(
             children: <Widget>[
               Container(
-                padding: EdgeInsets.all(10),
+                padding: EdgeInsets.only(top: 20.0, bottom: 20.0, left: 20.0, right: 20.0),
                 child: Text(
                   'Username : ',
                   style: TextStyle(
@@ -108,7 +108,68 @@ class _EditInfoState extends State<EditInfo> {
           title: Text('Edit Info'),
         ),
         body: Center(
+            child:ListView(
+              children: <Widget>[
+                Container(
+                  padding: EdgeInsets.only(top: 20.0, bottom: 20.0, left: 20.0, right: 20.0),
+                  child: SizedBox(
+                    width: 100,
+                    height: 50,
+                    child: TextField(
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: 'New Username',
+                      ),
+                    ),
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.all(10),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'New Password',
+                    ),
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.all(10),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'New Email',
+                    ),
+                  ),
+                ),
+                Center(
+                  child: SizedBox(
+                    width: 200,
+                    height: 50,
+                    child: TextButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Profile()),
+                        );
+                      },
+                      style: TextButton.styleFrom(
+                        primary: Colors.white,
+                        backgroundColor: Colors.blueGrey,
+                        onSurface: Colors.grey,
+                      ),
 
+                      child: Text(
+                        'Save',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ),
+                  )
+              ],
+            ),
         ),
       ),
     );
