@@ -148,22 +148,24 @@ class MoreInfo extends StatelessWidget {
         ),
         body: Center(
             child: Column(children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.only(
-                top: 50.0, bottom: 10.0, left: 70.0, right: 20.0),
+          Container(
+            // padding: EdgeInsets.all(10),
+            alignment: Alignment.topCenter,
             child: Text(
               '''Im Morteza Mahdavi and my colleague is Mehdi Avara.
-We Both from bushehr and and study in SBU.
-                  
-for AP project we were grouped and creating this app with flutter and java.
-                  
-our favorite field is machine learning and we hope create ai projects with each other
-in the future.''',
+              
+We Both are from bushehr and and study in SBU.
+
+for AP project we were grouped for creating this app with flutter and java.
+
+our favorite field is machine learning and we hope to create AI projects with each other in the future.''',
               style: TextStyle(
                 fontSize: 20.0,
                 fontWeight: FontWeight.bold,
                 color: Colors.white70,
               ),
+              textAlign: TextAlign.center,
+
             ),
           )
         ])),
