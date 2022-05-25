@@ -2,6 +2,7 @@ class Community{
   String _name;
   String _imageUrl;
 
+
   String get imageUrl => _imageUrl;
 
   Community(this._name);
@@ -11,5 +12,8 @@ class Community{
 
   set name(String value) {
     _name = value;
+  }
+  set imageUrl(String value) {
+    _imageUrl = value;
   }
 }

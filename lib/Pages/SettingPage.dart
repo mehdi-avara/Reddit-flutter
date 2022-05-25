@@ -6,6 +6,7 @@ import 'package:ui_flutter/Pages/loginSignUpPage.dart';
 import 'package:ui_flutter/widgets/otherWidget.dart';
 import '../config/themeSettings.dart';
 import 'AboutUs.dart';
+import 'CreateCommunity.dart';
 
 
 class SettingPage extends StatefulWidget {
@@ -59,7 +60,8 @@ class _SettingPageState extends State<SettingPage> {
                   label: Text('Create Community', style: TextStyle(fontSize: 20.0,color: Colors.grey),),
                   icon: Icon(Icons.people,size: 40,color: Colors.yellow,),
                   onPressed: () {
-                    print('Pressed'); //this is free for set a function on it
+                    Navigator.push(
+                        context, MaterialPageRoute(builder: (context) => CreateCommunity())); //this is free for set a function on it
                   },
                 ),
 
