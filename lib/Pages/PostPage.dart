@@ -30,30 +30,53 @@ class _PostPageState extends State<PostPage> {
       ),
     );
   }
-  ListView _comments(List<Comment> comments) {
+  Container _comments(List<Comment> comments) {
     if (comments.isEmpty) {
-      return ListView(
-        shrinkWrap: true,
-        children: <Widget>[
-          Text(
-            'No comments yet',
-            style: TextStyle(
-              fontSize: themeSizes.communityName,
-              fontWeight: FontWeight.bold,
-              // color: Palette.textColor1
-            ),
-          ),
-        ],
+      return Container(
+        // child: ListView(
+        //   shrinkWrap: true,
+        //   children: <Widget>[
+        //     Text(
+        //       'No comments yet',
+        //       style: TextStyle(
+        //         fontSize: themeSizes.communityName,
+        //         fontWeight: FontWeight.bold,
+        //         // color: Palette.textColor1
+        //       ),
+        //     ),
+        //   ],
+        // ),
       );
     }
     else {
-      return ListView.builder(
-        shrinkWrap: true,
-        physics: ClampingScrollPhysics(),
-        itemCount: comments.length,
-        itemBuilder: (BuildContext context, int index) {
-          return PostPageComment(comment: comments[index]);
-        },
+      return Container(
+        child: ListView.builder(
+            shrinkWrap: true,
+            physics: ClampingScrollPhysics(),
+            itemCount: comments.length,
+            itemBuilder: (BuildContext context, int index) {
+              return ListView(
+                  shrinkWrap: true,
+                  physics: ClampingScrollPhysics(),
+                  children: [
+                    PostPageComment(comment: comments[index]),
+                    comments[index].comments.isEmpty?Container():Row(
+                      children: [
+                        Container(
+                          padding: EdgeInsets.all(10),
+                          child: Divider(
+                            color: Colors.black,
+                            thickness: 5,
+                            height: 5,
+                          ),
+                        ),
+                        Expanded(child: _comments(comments[index].comments)),
+                      ],
+                    ),
+                  ]
+              );
+            },
+          ),
       );
     }
   }
