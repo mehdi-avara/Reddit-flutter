@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ui_flutter/Pages/PostPage.dart';
 import 'package:ui_flutter/Pages/SettingPage.dart';
 import 'package:ui_flutter/Pages/loginSignUpPage.dart';
 import 'package:ui_flutter/config/themeSettings.dart';
@@ -20,7 +21,11 @@ class feedWidget extends StatelessWidget {
       child: Column(
         children: <Widget>[
           _profileListTile(_post,context),
-          _postPart(_post.title,_post.discription),
+          GestureDetector(child: _postPart(_post.title,_post.discription),
+          onTap: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>PostPage(post: _post,)));
+          },
+          ),
           _belowPostPart(),
         ],
       ),
