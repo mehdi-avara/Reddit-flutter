@@ -17,22 +17,24 @@ class _PostPageState extends State<PostPage> {
     return SafeArea(
       child: MaterialApp(
         home: Scaffold(
-          body: Container(
-            padding: EdgeInsets.all(10),
-            margin: EdgeInsets.fromLTRB(0, 2, 0, 0),
-            decoration: BoxDecoration(
-              color: ThemeData.dark().cardColor,
-              // borderRadius: BorderRadius.circular(10),
-            ),
+          body: SingleChildScrollView(
+            child: Container(
+              padding: EdgeInsets.all(10),
+              margin: EdgeInsets.fromLTRB(0, 2, 0, 0),
+              decoration: BoxDecoration(
+                color: ThemeData.dark().cardColor,
+                // borderRadius: BorderRadius.circular(10),
+              ),
 
-            child: Column(
-              children: <Widget>[
-                _profileListTile(widget.post,context),
-                _postPart(widget.post.title,widget.post.discription),
-                _belowPostPart(),
-                _comments(widget.post.comments),
+              child: Column(
+                children: <Widget>[
+                  _profileListTile(widget.post,context),
+                  _postPart(widget.post.title,widget.post.discription),
+                  _belowPostPart(),
+                  _comments(widget.post.comments),
 
-              ],
+                ],
+              ),
             ),
           ),
         ),

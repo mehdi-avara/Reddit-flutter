@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ui_flutter/models/comment.dart';
 import 'package:ui_flutter/models/post.dart';
 import 'package:ui_flutter/config/themeSettings.dart';
+import 'package:ui_flutter/models/user.dart';
 
 class PostPageComment extends StatelessWidget {
   const PostPageComment({Key key, this.comment}) : super(key: key);
@@ -10,42 +11,44 @@ class PostPageComment extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(10),
-      child: Text(comment.comment,
-      style: TextStyle(
-        color: Colors.white,
-      ),),
+      child: Column(
+        children: <Widget>[
+          _profileListTile(comment.user),
+          _postPart(comment.comment),
+          _belowPostPart(),
+
+        ],
+      ),
     );
   }
 
 
 
-  Container _postPart(String Title,String description){
+  Container _postPart(String Title){
     return Container(
       child: ListTile(
         title: Text(Title,style: TextStyle(fontSize: themeSizes.communityName,fontWeight: FontWeight.bold,
           // color: Palette.textColor1
         ),),
-        subtitle: Text(description,style: TextStyle(fontSize: themeSizes.userName,
-          // color: Palette.textColor2
-        ),),
+
       ),
     );
   }
-  Container _profileListTile(Post post,BuildContext context) {
+  Container _profileListTile(User user) {
     return Container(
       child: ListTile(
         leading: CircleAvatar(
           radius: themeSizes.avatarRadius,
           // backgroundColor: Colors.grey[850],
-          child: post.imageUrl != null
-              ? Image.asset(post.imageUrl)
+          child: user.profileImageUrl != null
+              ? Image.asset(user.profileImageUrl)
               : Icon(
             Icons.person,
             size: themeSizes.avatarIconSize,
             // color: Colors.white,
           ),
         ),
-        title: Text(post.discription
+        title: Text(user.name
           , style: TextStyle(
             fontSize: themeSizes.userName,
             // color: Palette.textColor2,
