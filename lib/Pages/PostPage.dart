@@ -16,6 +16,10 @@ class _PostPageState extends State<PostPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        themeMode:ThemeMode.system,
+        theme: ThemeClass.darkTheme,
+        darkTheme: ThemeClass.darkTheme,
         home: Scaffold(
           body: ListView(
             children: <Widget>[
@@ -65,7 +69,7 @@ class _PostPageState extends State<PostPage> {
                         Container(
                           padding: EdgeInsets.all(10),
                           child: Divider(
-                            color: Colors.black,
+                            // color: Colors.black,
                             thickness: 5,
                             height: 5,
                           ),
