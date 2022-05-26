@@ -33,9 +33,8 @@ class _CreateCommunityState extends State<CreateCommunity> {
               child: Container(
                 child: ListView(
                   children: <Widget>[
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width*1.0,
-                      height: MediaQuery.of(context).size.height*0.2,
+                    Padding(
+                      padding: const EdgeInsets.only(top: 20.0, bottom: 50.0, left: 20.0, right: 20.0),
                       child: Center(
                         child: CircleAvatar(
                           radius: MediaQuery.of(context).size.width*0.2,
@@ -64,10 +63,10 @@ class _CreateCommunityState extends State<CreateCommunity> {
                     Center(
                       child:SizedBox(
                         child: TextButton(
-                          onPressed: (){},
+                          onPressed: (){}, //should assign a function to this
                           style: TextButton.styleFrom(
                             primary: Colors.white,
-                            backgroundColor: Colors.orange,
+                            backgroundColor: Colors.deepOrange,
                             onSurface: Colors.white70,
                           ),
                           child: Text(
