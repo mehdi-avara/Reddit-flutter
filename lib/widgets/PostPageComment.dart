@@ -10,6 +10,10 @@ class PostPageComment extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      decoration: BoxDecoration(
+        color: ThemeData.dark().cardColor,
+        // borderRadius: BorderRadius.circular(10),
+      ),
       padding: EdgeInsets.all(10),
       child: Column(
         children: <Widget>[
