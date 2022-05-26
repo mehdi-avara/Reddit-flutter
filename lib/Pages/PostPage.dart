@@ -56,8 +56,8 @@ class _PostPageState extends State<PostPage> {
                           padding: EdgeInsets.all(10),
                           child: Divider(
                             // color: Colors.black,
-                            thickness: 5,
-                            height: 5,
+                            thickness: 100,
+                            height: 100,
                           ),
                         ),
                         Expanded(child: _comments(comments[index].comments)),
