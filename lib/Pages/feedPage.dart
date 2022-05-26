@@ -44,7 +44,9 @@ _feedPageState(){
     Comment("comment 1", user.elementAt(0)),
     Comment("comment 2", user.elementAt(1)),
     Comment("comment 3", user.elementAt(2)),
-    Comment("comment 4", user.elementAt(3))];
+    Comment("comment 4", user.elementAt(3)),
+    Comment("comment 5", user.elementAt(4)),
+    Comment("comment 6", user.elementAt(5)),];
   comment2=[
     Comment("comment 5", user.elementAt(4)),
     Comment("comment 6", user.elementAt(5))];

@@ -17,49 +17,43 @@ class _PostPageState extends State<PostPage> {
     return SafeArea(
       child: MaterialApp(
         home: Scaffold(
-          body: SingleChildScrollView(
-            child: Container(
-              padding: EdgeInsets.all(10),
-              margin: EdgeInsets.fromLTRB(0, 2, 0, 0),
-              decoration: BoxDecoration(
-                color: ThemeData.dark().cardColor,
-                // borderRadius: BorderRadius.circular(10),
-              ),
+          body: ListView(
+            children: <Widget>[
+              _profileListTile(widget.post,context),
+              _postPart(widget.post.title,widget.post.discription),
+              _belowPostPart(),
+              _comments(widget.post.comments),
 
-              child: Column(
-                children: <Widget>[
-                  _profileListTile(widget.post,context),
-                  _postPart(widget.post.title,widget.post.discription),
-                  _belowPostPart(),
-                  _comments(widget.post.comments),
-
-                ],
-              ),
-            ),
+            ],
           ),
         ),
       ),
     );
   }
-  Container _comments(List<Comment> comments) {
+  ListView _comments(List<Comment> comments) {
     if (comments.isEmpty) {
-      return Container(
-        padding: EdgeInsets.all(10),
-        child: Text("No comments yet",
-          style: TextStyle(
-            color: Colors.white,
-          ),),
+      return ListView(
+        shrinkWrap: true,
+        children: <Widget>[
+          Text(
+            'No comments yet',
+            style: TextStyle(
+              fontSize: themeSizes.communityName,
+              fontWeight: FontWeight.bold,
+              // color: Palette.textColor1
+            ),
+          ),
+        ],
       );
     }
     else {
-      return Container(
-        child: ListView.builder(
-          shrinkWrap: true,
-          itemCount: comments.length,
-          itemBuilder: (BuildContext context, int index) {
-            return PostPageComment(comment: comments[index]);
-          },
-        ),
+      return ListView.builder(
+        shrinkWrap: true,
+        physics: ClampingScrollPhysics(),
+        itemCount: comments.length,
+        itemBuilder: (BuildContext context, int index) {
+          return PostPageComment(comment: comments[index]);
+        },
       );
     }
   }
