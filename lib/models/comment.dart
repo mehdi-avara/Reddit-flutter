@@ -5,7 +5,9 @@ class Comment{
   User _user;
   List<Comment> _comments;
   String get comment => _comment;
-  Comment(this._comment, this._user);
+  Comment(this._comment, this._user){
+    _comments = [];
+  }
   set comment(String value) {
     _comment = value;
   }
