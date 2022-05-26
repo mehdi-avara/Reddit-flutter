@@ -62,15 +62,20 @@ class Post{
 
   Post.image(this._postId, this._title, this._discription){
     _mode = Modes.image;
+    _comments = [];
   }
 
 
   Post.text(this._postId, this._title, this._discription, this._user,
       this._community){
     _mode = Modes.text;
+    _comments = [];
+
   }
   Post.video(this._postId, this._title, this._videoUrl, this._user,
       this._community){
     _mode = Modes.video;
+    _comments = [];
+
   }
 }

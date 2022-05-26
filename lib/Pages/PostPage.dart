@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:ui_flutter/models/comment.dart';
 import 'package:ui_flutter/models/post.dart';
 import 'package:ui_flutter/config/themeSettings.dart';
+import 'package:ui_flutter/widgets/PostPageComment.dart';
 
 class PostPage extends StatefulWidget {
   const PostPage({Key key,this.post}) : super(key: key);
@@ -28,6 +30,8 @@ class _PostPageState extends State<PostPage> {
                 _profileListTile(widget.post,context),
                 _postPart(widget.post.title,widget.post.discription),
                 _belowPostPart(),
+                _comments(widget.post.comments),
+
               ],
             ),
           ),
@@ -35,6 +39,30 @@ class _PostPageState extends State<PostPage> {
       ),
     );
   }
+  Container _comments(List<Comment> comments) {
+    if (comments.isEmpty) {
+      return Container(
+        padding: EdgeInsets.all(10),
+        child: Text("No comments yet",
+          style: TextStyle(
+            color: Colors.white,
+          ),),
+      );
+    }
+    else {
+      return Container(
+        child: ListView.builder(
+          shrinkWrap: true,
+          itemCount: comments.length,
+          itemBuilder: (BuildContext context, int index) {
+            return PostPageComment(comment: comments[index]);
+          },
+        ),
+      );
+    }
+  }
+
+
   Container _postPart(String Title,String description){
     return Container(
       child: ListTile(
