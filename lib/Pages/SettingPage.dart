@@ -3,6 +3,7 @@ import 'package:ui_flutter/Pages/Profile.dart';
 import 'package:ui_flutter/Pages/addPost.dart';
 import 'package:ui_flutter/Pages/feedPage.dart';
 import 'package:ui_flutter/Pages/loginSignUpPage.dart';
+import 'package:ui_flutter/Pages/savedPost.dart';
 import 'package:ui_flutter/widgets/otherWidget.dart';
 import '../config/themeSettings.dart';
 import 'AboutUs.dart';
@@ -73,7 +74,8 @@ class _SettingPageState extends State<SettingPage> {
                   label: Text('Saved posts', style: TextStyle(fontSize: 20.0,color: Colors.grey),),
                   icon: Icon(Icons.save_rounded,size: 40,color: Colors.green,),
                   onPressed: () {
-                    print('Pressed'); //this is free for set a function on it
+                    Navigator.push(
+                        context, MaterialPageRoute(builder: (context) => SavedPost())); //this is free for set a function on it
                   },
                 ),
               ),
