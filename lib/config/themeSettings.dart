@@ -34,6 +34,7 @@ mixin AppTheme implements ThemeData {
 }
 
 class ThemeClass{
+ String backgroundColor = "sdfjndf,jdn";
 
   static ThemeData lightTheme = ThemeData(
       scaffoldBackgroundColor: Colors.white,
@@ -58,9 +59,13 @@ class ThemeClass{
     cardColor: Colors.grey[70],
     accentColor: Colors.grey[70],
 
+
   );
   static ThemeData appTheme = lightTheme;
   static changeThemeToDark(){
     appTheme = darkTheme;
+  }
+  static changeThemeToLight(){
+    appTheme = lightTheme;
   }
 }
