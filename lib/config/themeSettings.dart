@@ -29,7 +29,9 @@ class themeSizes{
 
   static const double searchBarIcon=20.0;
 }
+mixin AppTheme implements ThemeData {
 
+}
 
 class ThemeClass{
 
@@ -38,7 +40,12 @@ class ThemeClass{
       colorScheme: ColorScheme.light(),
       appBarTheme: AppBarTheme(
         backgroundColor: Colors.blue,
-      )
+      ),
+    cardColor: Colors.grey[50],
+    primaryColor: Colors.blue,
+    buttonBarTheme: ButtonBarThemeData(
+      buttonTextTheme: ButtonTextTheme.primary,
+    ),
   );
 
   static ThemeData darkTheme = ThemeData(
@@ -47,6 +54,8 @@ class ThemeClass{
     appBarTheme: AppBarTheme(
       backgroundColor: Colors.black,
     ),
+    cardColor: Colors.grey[70],
+
   );
-  static ThemeData appTheme = darkTheme;
+  static ThemeData appTheme = lightTheme;
 }

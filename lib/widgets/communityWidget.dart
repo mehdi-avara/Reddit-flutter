@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ui_flutter/config/themeSettings.dart';
 import 'package:ui_flutter/models/community.dart';
 
 class communityWidget extends StatelessWidget {
@@ -11,7 +12,7 @@ class communityWidget extends StatelessWidget {
       padding: EdgeInsets.all(10),
       margin: EdgeInsets.fromLTRB(0, 2, 0, 0),
       decoration: BoxDecoration(
-        color: ThemeData.dark().cardColor,
+        color: ThemeClass.appTheme.cardColor,
         // borderRadius: BorderRadius.circular(10),
       ),
 

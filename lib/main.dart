@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ui_flutter/Pages/splash%20Screen.dart';
 import 'package:ui_flutter/Pages/loginSignUpPage.dart';
+import 'package:ui_flutter/config/themeSettings.dart';
 
 
 void main() {
@@ -31,9 +32,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Reddit',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: ThemeClass.appTheme,
       home: const SplashScreen(),
     );
   }
