@@ -18,20 +18,38 @@ class _ChangeThemeState extends State<ChangeTheme> {
           title: Text('Change Theme'),
         ),
         body: Center(
-          child: RaisedButton(
-            child: Text('Change Theme to dark'),
-            onPressed: () {
-              setState(() {
-                ThemeClass.changeThemeToDark();
-                print("theme");
-                Navigator.pushAndRemoveUntil(
-                    context,
-                    MaterialPageRoute(builder: (context) => feedPage()),
-                    (Route<dynamic> route) => false);
-              }
-              );
+          child: Column(
+            children: [
+              RaisedButton(
+                child: Text('Change Theme to dark'),
+                onPressed: () {
+                  setState(() {
+                    ThemeClass.changeThemeToDark();
+                    print("theme");
+                    Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(builder: (context) => feedPage()),
+                        (Route<dynamic> route) => false);
+                  }
+                  );
 
-            },
+                },
+              ),
+              RaisedButton(
+                child: Text('Change Theme to light'),
+                onPressed: () {
+                  setState(() {
+                    ThemeClass.changeThemeToLight();
+                    print("theme");
+                    Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(builder: (context) => feedPage()),
+                        (Route<dynamic> route) => false);
+                  }
+                  );
+                },
+              ),
+            ],
           ),
         ),
       ),
