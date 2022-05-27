@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:ui_flutter/Pages/SettingPage.dart';
+import 'package:ui_flutter/Pages/addPost.dart';
 import 'package:ui_flutter/models/comment.dart';
 import 'package:ui_flutter/models/community.dart';
 import 'package:ui_flutter/models/post.dart';
@@ -94,17 +96,19 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    PageController _pageController = PageController(initialPage: 0);
     return MaterialApp(
       theme: ThemeClass.appTheme,
       home: Scaffold(
         appBar: widgets.appBar(_user, context),
         body: PageView(
+          controller: _pageController,
           children: <Widget>[
             _feed(posts),
             _Community(_community)
           ],
         ),
-        bottomNavigationBar: widgets.bottomNavigationBar(context),
+        bottomNavigationBar: bottomNavigationBar(context, _pageController),
       ),
     );
   }
@@ -132,5 +136,82 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+  static BottomNavigationBar bottomNavigationBar(BuildContext context,PageController _pageController) {
+    return BottomNavigationBar(
+      type: BottomNavigationBarType.fixed,
+      // fixedColor:  ThemeClass.appTheme.primaryColor,
+      selectedIconTheme: IconThemeData(
+        color: ThemeClass.appTheme.primaryColor,
+      ),
+      unselectedIconTheme: IconThemeData(
+        color: ThemeClass.appTheme.primaryColor,
+      ),
+
+      // selectedItemColor: ThemeClass.appTheme.primaryColor,
+      items: <BottomNavigationBarItem>[
+        BottomNavigationBarItem(
+          icon: Icon(
+            Icons.home,
+          ),
+          label: 'Home',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(
+            Icons.group,
+          ),
+          label: 'community',
+
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(
+            Icons.add,
+          ),
+          label: 'Add',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(
+            Icons.chat,
+          ),
+          label: 'Chat',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(
+            Icons.notifications,
+          ),
+          label: 'Notifications',
+        ),
+      ],
+      onTap: (index) {
+        onTapFunction(index, context, _pageController);
+      },
+      showUnselectedLabels: false,
+      showSelectedLabels: false,
+
+    );
+  }
+  static onTapFunction(int mode, BuildContext context,PageController _pageController) {
+    switch (mode) {
+      case 0:
+        _pageController.animateToPage(0,
+            duration: Duration(milliseconds: 500), curve: Curves.easeInOut);
+        break;
+      case 1:
+        _pageController.animateToPage(1,
+            duration: Duration(milliseconds: 500), curve: Curves.easeInOut);
+        break;
+      case 2:
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => addPost()));
+        break;
+      case 3:
+      // Navigator.push(context, MaterialPageRoute(builder: (context)=>ChatPage()));
+        break;
+      case 4:
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => SettingPage()));
+        break;
+    }
+  }
+
 }
 
