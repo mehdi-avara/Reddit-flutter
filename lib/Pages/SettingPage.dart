@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ui_flutter/Pages/Profile.dart';
 import 'package:ui_flutter/Pages/addPost.dart';
+import 'package:ui_flutter/Pages/changeTheme.dart';
 import 'package:ui_flutter/Pages/feedPage.dart';
 import 'package:ui_flutter/Pages/loginSignUpPage.dart';
 import 'package:ui_flutter/Pages/savedPost.dart';
@@ -98,7 +99,7 @@ class _SettingPageState extends State<SettingPage> {
                   label: Text('Theme', style: TextStyle(fontSize: 20.0,color: Colors.grey),),
                   icon: Icon(Icons.collections_rounded,size: 40,color: Colors.orange,),
                   onPressed: () {
-                    print('Pressed'); //this is free for set a function
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=> ChangeTheme()) ); //this is free for set a function
                   },
                 ),
                 ),
