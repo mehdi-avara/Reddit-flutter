@@ -17,39 +17,45 @@ class widgets extends StatelessWidget {
 
   static BottomNavigationBar bottomNavigationBar(BuildContext context) {
     return BottomNavigationBar(
+      type: BottomNavigationBarType.fixed,
+      // fixedColor:  ThemeClass.appTheme.primaryColor,
+      selectedIconTheme: IconThemeData(
+        color: ThemeClass.appTheme.primaryColor,
+      ),
+      unselectedIconTheme: IconThemeData(
+        color: ThemeClass.appTheme.accentColor,
+      ),
+
+      selectedItemColor: ThemeClass.appTheme.primaryColor,
       items: <BottomNavigationBarItem>[
         BottomNavigationBarItem(
           icon: Icon(
             Icons.home,
-            color: ThemeClass.appTheme.primaryColor,
           ),
           label: 'Home',
         ),
         BottomNavigationBarItem(
           icon: Icon(
             Icons.group,
-            color: ThemeClass.appTheme.primaryColor,
           ),
           label: 'community',
+
         ),
         BottomNavigationBarItem(
           icon: Icon(
             Icons.add,
-            color: ThemeClass.appTheme.primaryColor,
           ),
           label: 'Add',
         ),
         BottomNavigationBarItem(
           icon: Icon(
             Icons.chat,
-            color: ThemeClass.appTheme.primaryColor,
           ),
           label: 'Chat',
         ),
         BottomNavigationBarItem(
           icon: Icon(
             Icons.notifications,
-            color: ThemeClass.appTheme.primaryColor,
           ),
           label: 'Notifications',
         ),
@@ -57,8 +63,9 @@ class widgets extends StatelessWidget {
       onTap: (index) {
         onTapFunction(index, context);
       },
-      showUnselectedLabels: true,
-      showSelectedLabels: true,
+      showUnselectedLabels: false,
+      showSelectedLabels: false,
+
     );
   }
 
