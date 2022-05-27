@@ -42,11 +42,11 @@ class ThemeClass{
   );
 
   static ThemeData darkTheme = ThemeData(
-      scaffoldBackgroundColor: Colors.black,
-      colorScheme: ColorScheme.dark(),
-      appBarTheme: AppBarTheme(
-        backgroundColor: Colors.black,
-      ),
-
+    scaffoldBackgroundColor: Colors.black,
+    colorScheme: ColorScheme.dark(),
+    appBarTheme: AppBarTheme(
+      backgroundColor: Colors.black,
+    ),
   );
+  static ThemeData appTheme = darkTheme;
 }

@@ -18,8 +18,8 @@ class _PostPageState extends State<PostPage> {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         themeMode:ThemeMode.system,
-        theme: ThemeClass.darkTheme,
-        darkTheme: ThemeClass.darkTheme,
+        theme: ThemeClass.appTheme,
+        darkTheme: ThemeClass.appTheme,
         home: Scaffold(
           body: ListView(
             children: <Widget>[

@@ -9,8 +9,8 @@ class AboutUs extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.system,
-      theme: ThemeClass.darkTheme,
-      darkTheme: ThemeClass.darkTheme,
+      theme: ThemeClass.appTheme,
+      darkTheme: ThemeClass.appTheme,
       home: Scaffold(
         appBar: AppBar(
           title: Text('About Us'),
@@ -138,8 +138,8 @@ class MoreInfo extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.system,
-      theme: ThemeClass.darkTheme,
-      darkTheme: ThemeClass.darkTheme,
+      theme: ThemeClass.appTheme,
+      darkTheme: ThemeClass.appTheme,
       home: Scaffold(
         appBar: AppBar(
           centerTitle: true,

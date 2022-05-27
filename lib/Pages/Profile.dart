@@ -14,8 +14,8 @@ class _ProfileState extends State<Profile> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       themeMode:ThemeMode.system,
-      theme: ThemeClass.darkTheme,
-      darkTheme: ThemeClass.darkTheme,
+      theme: ThemeClass.appTheme,
+      darkTheme: ThemeClass.appTheme,
       home: Scaffold(
         appBar: AppBar(
           centerTitle: true,
@@ -108,8 +108,8 @@ class _EditInfoState extends State<EditInfo> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       themeMode:ThemeMode.system,
-      theme: ThemeClass.darkTheme,
-      darkTheme: ThemeClass.darkTheme,
+      theme: ThemeClass.appTheme,
+      darkTheme: ThemeClass.appTheme,
       home: Scaffold(
         appBar: AppBar(
           centerTitle: true,

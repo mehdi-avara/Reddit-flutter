@@ -20,8 +20,8 @@ class _addPostState extends State<addPost> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       themeMode:ThemeMode.system,
-      theme: ThemeClass.darkTheme,
-      darkTheme: ThemeClass.darkTheme,
+      theme: ThemeClass.appTheme,
+      darkTheme: ThemeClass.appTheme,
       home: Scaffold(
 
         appBar: AppBar(

@@ -27,8 +27,8 @@ class _SplashScreenState extends State<SplashScreen> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       themeMode:ThemeMode.system,
-      theme: ThemeClass.darkTheme,
-      darkTheme: ThemeClass.darkTheme,
+      theme: ThemeClass.appTheme,
+      darkTheme: ThemeClass.appTheme,
       home: Scaffold(
         body: Center(
           child: Column(
