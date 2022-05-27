@@ -99,7 +99,15 @@ class _SettingPageState extends State<SettingPage> {
                   label: Text('Theme', style: TextStyle(fontSize: 20.0,color: Colors.grey),),
                   icon: Icon(Icons.collections_rounded,size: 40,color: Colors.orange,),
                   onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=> ChangeTheme()) ); //this is free for set a function
+                    // Navigator.push(context, MaterialPageRoute(builder: (context)=> ChangeTheme()) ); //this is free for set a function
+                    setState(() {
+                      ThemeClass.changeTheme();
+                      Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(builder: (context) => feedPage()),
+                              (Route<dynamic> route) => false);
+                    }
+                    );
                   },
                 ),
                 ),

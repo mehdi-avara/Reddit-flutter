@@ -68,4 +68,11 @@ class ThemeClass{
   static changeThemeToLight(){
     appTheme = lightTheme;
   }
+  static changeTheme(){
+    if(appTheme == lightTheme){
+      appTheme = darkTheme;
+    }else{
+      appTheme = lightTheme;
+    }
+  }
 }
