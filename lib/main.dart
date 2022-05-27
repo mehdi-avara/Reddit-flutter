@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ui_flutter/Pages/HomePage.dart';
 import 'package:ui_flutter/Pages/splash%20Screen.dart';
 import 'package:ui_flutter/Pages/loginSignUpPage.dart';
 import 'package:ui_flutter/config/themeSettings.dart';
@@ -33,7 +34,7 @@ class App extends StatelessWidget {
     return MaterialApp(
       title: 'Reddit',
       theme: ThemeClass.appTheme,
-      home: const SplashScreen(),
+      home: const HomePage(),
     );
   }
 }
