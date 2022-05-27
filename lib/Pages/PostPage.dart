@@ -27,9 +27,9 @@ class _PostPageState extends State<PostPage> {
               _postPart(widget.post.title,widget.post.discription),
               _belowPostPart(),
               _comments(widget.post.comments),
-
             ],
           ),
+          bottomSheet: _bottomSheet(),
         ),
       ),
     );
@@ -187,4 +187,18 @@ class _PostPageState extends State<PostPage> {
       ),
     );
   }
+}
+
+_bottomSheet() {
+  return Container(
+    child: ListTile(
+      leading: IconButton(onPressed: (){}, icon: Icon(Icons.search),),
+      title: TextField(
+        decoration: InputDecoration(
+          hintText: "Search",
+          border: InputBorder.none,
+        ),
+      ),
+    ),
+  );
 }
