@@ -83,6 +83,7 @@ class _addPostState extends State<addPost> {
                       subtitle: Padding(
                         padding: const EdgeInsets.only(top: 30.0, bottom: 60.0, left: 0.0, right: 0.0),
                         child: TextField(
+                          maxLines: null,
                           decoration: InputDecoration(
                               labelText: 'Description',
                               hintText: 'Add a Description',
@@ -100,7 +101,7 @@ class _addPostState extends State<addPost> {
 
     );
   }
-  static popUpMenu(BuildContext context) {
+  static PopupMenuButton popUpMenu(BuildContext context) {
     return PopupMenuButton<int>(
       icon: Icon(Icons.list),
       itemBuilder: (context) => [
@@ -129,16 +130,10 @@ class _addPostState extends State<addPost> {
       onSelected: (value) {
         switch (value) {
           case 1:
-            // Navigator.push(
-            //     context, MaterialPageRoute(builder: (context) => SettingPage()));
             break;
           case 2:
-            // Navigator.push(
-                // context, MaterialPageRoute(builder: (context) => SettingPage()));
             break;
           case 3:
-            // Navigator.push(
-                // context, MaterialPageRoute(builder: (context) => LoginSignupScreen()));
             break;
         }
       },
