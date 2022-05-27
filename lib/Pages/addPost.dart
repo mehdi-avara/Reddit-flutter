@@ -63,12 +63,11 @@ class _addPostState extends State<addPost> {
           padding: EdgeInsets.only(top: 140.0, left: 40.0, right: 40.0,bottom: 10.0),
                 child:Column(
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.only(top: 20.0, bottom: 20.0, left: 30.0, right: 30.0),
+                    Center(
                       child: Row(
                         children: [
                           Text('Choose The Community',style: TextStyle(fontSize: 20.0,fontWeight: FontWeight.bold),),
-                          Expanded(child:popUpMenu(context)),
+                          popUpMenu(context),
                         ],
                       ),
                     ),
@@ -78,7 +77,9 @@ class _addPostState extends State<addPost> {
                             labelText: 'Title',
                             hintText: 'Add a Title',
                             border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(20.0))),
+                                borderRadius: BorderRadius.circular(20.0)
+                            )
+                        ),
                       ),
                       subtitle: Padding(
                         padding: const EdgeInsets.only(top: 30.0, bottom: 60.0, left: 0.0, right: 0.0),
