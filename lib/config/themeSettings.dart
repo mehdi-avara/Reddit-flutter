@@ -58,14 +58,22 @@ class ThemeClass{
     ),
     cardColor: Colors.grey[70],
     accentColor: Colors.grey[70],
+    primaryColor: Colors.black,
 
 
   );
-  static ThemeData appTheme = lightTheme;
+  static ThemeData appTheme = darkTheme;
   static changeThemeToDark(){
     appTheme = darkTheme;
   }
   static changeThemeToLight(){
     appTheme = lightTheme;
+  }
+  static changeTheme(){
+    if(appTheme == lightTheme){
+      appTheme = darkTheme;
+    }else{
+      appTheme = lightTheme;
+    }
   }
 }
