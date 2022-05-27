@@ -20,7 +20,7 @@ class widgets extends StatelessWidget {
       type: BottomNavigationBarType.fixed,
       // fixedColor:  ThemeClass.appTheme.primaryColor,
       selectedIconTheme: IconThemeData(
-        color: ThemeClass.appTheme.primaryColor,
+        color: ThemeClass.appTheme.accentColor,
       ),
       unselectedIconTheme: IconThemeData(
         color: ThemeClass.appTheme.accentColor,
