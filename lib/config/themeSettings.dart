@@ -56,8 +56,11 @@ class ThemeClass{
       backgroundColor: Colors.black,
     ),
     cardColor: Colors.grey[70],
-    accentColor: Colors.blue,
+    accentColor: Colors.grey[70],
 
   );
   static ThemeData appTheme = lightTheme;
+  static changeThemeToDark(){
+    appTheme = darkTheme;
+  }
 }
