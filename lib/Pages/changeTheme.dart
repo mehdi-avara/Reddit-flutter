@@ -19,12 +19,15 @@ class _ChangeThemeState extends State<ChangeTheme> {
         ),
         body: Center(
           child: RaisedButton(
-            child: Text('Change Theme'),
+            child: Text('Change Theme to dark'),
             onPressed: () {
               setState(() {
                 ThemeClass.changeThemeToDark();
                 print("theme");
-                Navigator.push(context, MaterialPageRoute(builder: (context) => feedPage()));
+                Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(builder: (context) => feedPage()),
+                    (Route<dynamic> route) => false);
               }
               );
 
