@@ -46,6 +46,7 @@ class ThemeClass{
     buttonBarTheme: ButtonBarThemeData(
       buttonTextTheme: ButtonTextTheme.primary,
     ),
+    accentColor: Colors.blue,
   );
 
   static ThemeData darkTheme = ThemeData(
@@ -55,6 +56,7 @@ class ThemeClass{
       backgroundColor: Colors.black,
     ),
     cardColor: Colors.grey[70],
+    accentColor: Colors.blue,
 
   );
   static ThemeData appTheme = lightTheme;
