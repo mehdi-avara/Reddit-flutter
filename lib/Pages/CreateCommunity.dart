@@ -25,7 +25,7 @@ class _CreateCommunityState extends State<CreateCommunity> {
         body: Container(
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('assets/images/community.jpg'),
+              image: AssetImage(ThemeClass.Community),
               fit: BoxFit.cover,
             ),
           ),
@@ -50,7 +50,7 @@ class _CreateCommunityState extends State<CreateCommunity> {
                           decoration: InputDecoration(
                             hintText: 'Community Name',
                             hintStyle: TextStyle(
-                              color: Colors.white,
+                              // color: Colors.white,
                             ),
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10.0),
@@ -67,12 +67,12 @@ class _CreateCommunityState extends State<CreateCommunity> {
                           style: TextButton.styleFrom(
                             primary: Colors.white,
                             backgroundColor: Colors.deepOrange,
-                            onSurface: Colors.white70,
+                            // onSurface: Colors.white70,
                           ),
                           child: Text(
                               'Create',
                               style: TextStyle(
-                                color: Colors.white,
+                                // color: Colors.white,
                                 fontSize: 20.0,
                               ),
                           ),

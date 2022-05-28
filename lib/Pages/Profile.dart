@@ -25,7 +25,7 @@ class _ProfileState extends State<Profile> {
           child: Container(
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/images/profile.jpg'),
+                image: AssetImage(ThemeClass.ProfileSetting),
                 fit: BoxFit.cover,
               ),
             ),

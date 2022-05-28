@@ -42,7 +42,7 @@ class _addPostState extends State<addPost> {
               style: TextButton.styleFrom(
                 primary: Colors.white,
                 backgroundColor: Colors.black,
-                onSurface: Colors.grey,
+                // onSurface: Colors.grey,
               ),
               onPressed: () {  //empty space for putting function
                 Navigator.pop(context);
@@ -55,7 +55,7 @@ class _addPostState extends State<addPost> {
       child: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/images/AddPostTheme.jpg'),
+            image: AssetImage(ThemeClass.AddPost),
             fit: BoxFit.cover,
           ),
         ),

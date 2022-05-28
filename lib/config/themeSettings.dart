@@ -13,7 +13,6 @@ class Palette{
   static const Color homeWidgetBackground = Color(0xFF211D1D);
 }
 
-
 class themeSizes{
   static const double fontTitle1 = 18.0;
   static const double fontTitle2 = 16.0;
@@ -34,7 +33,6 @@ mixin AppTheme implements ThemeData {
 }
 
 class ThemeClass{
- String backgroundColor = "sdfjndf,jdn";
 
   static ThemeData lightTheme = ThemeData(
       scaffoldBackgroundColor: Colors.white,
@@ -62,7 +60,57 @@ class ThemeClass{
 
 
   );
+  // String AboutUsDark = 'assets/images/AboutUs2.jpg';
+  // String AboutUsLight = 'assets/images/AboutUs3.jpg';
+  // String AddPostDark = 'assets/images/AddPostTheme.jpg';
+  // String AddPostLight = 'assets/images/AddPostTheme2.jpg';
+  // String CommunityDark = 'assets/images/community.jpg';
+  // String CommunityLight = 'assets/images/community2.jpg';
+  // String ProfileSettingDark = 'assets/images/profile.jpg';
+  // String ProfileSettingLight = 'assets/images/ProfileSetting.jpg';
   static ThemeData appTheme = darkTheme;
+  static String AboutUs = 'assets/images/AboutUs2.jpg';
+  static String AddPost = 'assets/images/AddPostTheme.jpg';
+  static String Community = 'assets/images/community.jpg';
+  static String ProfileSetting = 'assets/images/profile.jpg';
+
+
+  static changeAboutUs(){
+    if(AboutUs=='assets/images/AboutUs2.jpg'){
+      AboutUs='assets/images/AboutUs3.jpg';
+    }
+    else{
+      AboutUs='assets/images/AboutUs2.jpg';
+    }
+  }
+
+  static changeAddPost(){
+    if(AddPost=='assets/images/AddPostTheme.jpg'){
+      AddPost='assets/images/AddPostTheme2.jpg';
+    }
+    else{
+      AddPost='assets/images/AddPostTheme.jpg';
+    }
+  }
+
+  static changeCommunity(){
+    if(Community=='assets/images/community.jpg'){
+      Community='assets/images/community2.jpg';
+    }
+    else{
+      Community='assets/images/community.jpg';
+    }
+  }
+  static changeProfileSetting(){
+    if(ProfileSetting=='assets/images/profile.jpg'){
+      ProfileSetting='assets/images/ProfileSetting.jpg';
+    }
+    else{
+      ProfileSetting='assets/images/profile.jpg';
+    }
+  }
+
+
   static changeThemeToDark(){
     appTheme = darkTheme;
   }
@@ -76,4 +124,5 @@ class ThemeClass{
       appTheme = lightTheme;
     }
   }
+
 }
