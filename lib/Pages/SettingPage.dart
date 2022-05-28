@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ui_flutter/Pages/HomePage.dart';
 import 'package:ui_flutter/Pages/Profile.dart';
 import 'package:ui_flutter/Pages/addPost.dart';
 import 'package:ui_flutter/Pages/changeTheme.dart';
@@ -105,7 +106,7 @@ class _SettingPageState extends State<SettingPage> {
                       ThemeClass.changeTheme();
                       Navigator.pushAndRemoveUntil(
                           context,
-                          MaterialPageRoute(builder: (context) => feedPage()),
+                          MaterialPageRoute(builder: (context) => HomePage()),
                               (Route<dynamic> route) => false);
                     }
                     );

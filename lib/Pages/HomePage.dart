@@ -139,7 +139,7 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
-  static BottomNavigationBar bottomNavigationBar(BuildContext context,PageController _pageController) {
+  BottomNavigationBar bottomNavigationBar(BuildContext context,PageController _pageController) {
     return BottomNavigationBar(
       type: BottomNavigationBarType.fixed,
       // fixedColor:  ThemeClass.appTheme.primaryColor,
@@ -185,8 +185,10 @@ class _HomePageState extends State<HomePage> {
         ),
       ],
       onTap: (place) {
-        onTapFunction(place, context, _pageController);
-        index = place;
+        setState((){
+             onTapFunction(place, context, _pageController);
+             index = place;
+         });
       },
       currentIndex: index,
       showUnselectedLabels: false,
@@ -195,6 +197,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
   static onTapFunction(int mode, BuildContext context,PageController _pageController) {
+
     switch (mode) {
       case 0:
         _pageController.animateToPage(0,
@@ -212,8 +215,8 @@ class _HomePageState extends State<HomePage> {
       // Navigator.push(context, MaterialPageRoute(builder: (context)=>ChatPage()));
         break;
       case 4:
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => SettingPage()));
+        // Navigator.push(
+            // context, MaterialPageRoute(builder: (context) => SettingPage()));
         break;
     }
   }
