@@ -19,6 +19,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  static int index = 0;
   List<Community> _community = [
     new Community.withProfileImageUrl("Flutter", "assets/images/flutter.png"),
     new Community.withProfileImageUrl("Dart", "assets/images/dart.png"),
@@ -181,11 +182,13 @@ class _HomePageState extends State<HomePage> {
           label: 'Notifications',
         ),
       ],
-      onTap: (index) {
-        onTapFunction(index, context, _pageController);
+      onTap: (place) {
+        onTapFunction(place, context, _pageController);
+        index = place;
       },
+      currentIndex: index,
       showUnselectedLabels: false,
-      showSelectedLabels: false,
+      showSelectedLabels: true,
 
     );
   }
