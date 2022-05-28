@@ -99,6 +99,8 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     PageController _pageController = PageController(initialPage: 0);
     return MaterialApp(
+      debugShowMaterialGrid: false,
+      debugShowCheckedModeBanner: false,
       theme: ThemeClass.appTheme,
       home: Scaffold(
         appBar: widgets.appBar(_user, context),

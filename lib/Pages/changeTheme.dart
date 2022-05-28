@@ -13,6 +13,8 @@ class _ChangeThemeState extends State<ChangeTheme> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowMaterialGrid: false,
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           title: Text('Change Theme'),

@@ -58,6 +58,7 @@ class _SavedPost extends State<SavedPost> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowMaterialGrid: false,
       debugShowCheckedModeBanner: false,
       themeMode:ThemeMode.system,
       theme: ThemeClass.appTheme,

@@ -32,6 +32,8 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowMaterialGrid: false,
+      debugShowCheckedModeBanner: false,
       title: 'Reddit',
       theme: ThemeClass.appTheme,
       home: const HomePage(),
