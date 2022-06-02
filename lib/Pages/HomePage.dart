@@ -8,7 +8,7 @@ import 'package:ui_flutter/models/user.dart';
 import 'package:ui_flutter/widgets/communityWidget.dart';
 import 'package:ui_flutter/widgets/feedWidget.dart';
 import 'package:ui_flutter/widgets/otherWidget.dart';
-
+import 'package:ui_flutter/models/data.dart';
 import '../config/themeSettings.dart';
 
 class HomePage extends StatefulWidget {
@@ -19,6 +19,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  Datas data = Datas();
   static int index = 0;
   List<Community> _community = [
     new Community.withProfileImageUrl("Flutter", "assets/images/flutter.png"),
