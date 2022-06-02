@@ -80,15 +80,6 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
-
-  _ff(){
-    return TabBar(tabs: [],
-    onTap: (place){
-      setState((){
-        index = place;
-      });
-    },);
-  }
   BottomNavigationBar bottomNavigationBar(BuildContext context,PageController _pageController,int place) {
     return BottomNavigationBar(
       type: BottomNavigationBarType.fixed,
@@ -137,8 +128,10 @@ class _HomePageState extends State<HomePage> {
       onTap: (place) {
         setState(
                 (){
-             onTapFunction(place, context, _pageController);
-             index = place;
+                  onTapFunction(place, context, _pageController);
+                  if(place<=1) {
+                      index = place;
+                  };
          }
          );
       },
