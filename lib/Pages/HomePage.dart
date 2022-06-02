@@ -51,6 +51,10 @@ class _HomePageState extends State<HomePage> {
             _feed(posts),
             _Community(_community)
           ],
+          onPageChanged: (num){
+            pageChanged(num);
+          },
+
         ),
         bottomNavigationBar: bottomNavigationBar(context, _pageController,place),
       ),
@@ -164,6 +168,12 @@ class _HomePageState extends State<HomePage> {
             // context, MaterialPageRoute(builder: (context) => SettingPage()));
         break;
     }
+  }
+
+  void pageChanged(int change) {
+    setState((){
+      index = change;
+    });
   }
 
 }
