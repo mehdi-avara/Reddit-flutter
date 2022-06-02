@@ -19,80 +19,19 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  Datas data = Datas();
+  final Datas data = Datas();
   static int index = 0;
-  List<Community> _community = [
-    new Community.withProfileImageUrl("Flutter", "assets/images/flutter.png"),
-    new Community.withProfileImageUrl("Dart", "assets/images/dart.png"),
-    new Community.withProfileImageUrl("React", "assets/images/react.png"),
-    new Community.withProfileImageUrl("Vue", "assets/images/vue.png"),
-    new Community.withProfileImageUrl("Flutter", "assets/images/flutter.png"),
-    new Community.withProfileImageUrl("Dart", "assets/images/dart.png"),
-    new Community.withProfileImageUrl("React", "assets/images/react.png"),
-    new Community.withProfileImageUrl("Vue", "assets/images/vue.png"),
-    new Community.withProfileImageUrl("Flutter", "assets/images/flutter.png"),
-    new Community.withProfileImageUrl("Dart", "assets/images/dart.png"),
-    new Community.withProfileImageUrl("React", "assets/images/react.png"),
-    new Community.withProfileImageUrl("Vue", "assets/images/vue.png"),
-    new Community.withProfileImageUrl("Flutter", "assets/images/flutter.png"),
-    new Community.withProfileImageUrl("Dart", "assets/images/dart.png"),
-    new Community.withProfileImageUrl("React", "assets/images/react.png"),
-    new Community.withProfileImageUrl("Vue", "assets/images/vue.png"),
-    new Community.withProfileImageUrl("Flutter", "assets/images/flutter.png"),
-    new Community.withProfileImageUrl("Dart", "assets/images/dart.png"),
-    new Community.withProfileImageUrl("React", "assets/images/react.png"),
-    new Community.withProfileImageUrl("Vue", "assets/images/vue.png"),
-  ];
-  User _user = User.withProfileImageUrl("Sourav", "assets/images/profile.jpg");
-  List<User> user = [User("user 1"), User("user 2")
-    , User("user 3"), User("user 4"), User("user 5")
-    , User("user 6"), User("user 7")];
-  List<Comment> comment1 = [];
-  List<Comment> comment2 = [];
-  List<Comment> comment3 = [];
+  List<Community> _community = [];
+  User _mainUser;
+  List<User> user = [];
   List<Post> posts = [];
 
   _HomePageState() {
     {
-      posts = [
-        Post.text("0", "example 1", "discribed1", user.elementAt(0),
-            Community("community 1")),
-        Post.text("1", "example 2", "discribed2", user.elementAt(1),
-            Community("community 2")),
-        Post.text("2", "example 3", "discribed3", user.elementAt(2),
-            Community("community 3")),
-        Post.text("3", "example 4", "discribed4", user.elementAt(3),
-            Community("community 4")),
-        Post.text("4", "example 5", "discribed5", user.elementAt(4),
-            Community("community 5")),
-        Post.text("5", "example 6", "discribed6", user.elementAt(5),
-            Community("community 6")),
-        Post.text("6", "example 7", "discribed7", user.elementAt(6),
-            Community("community 7")),
-
-      ];
-      comment1 = [
-        Comment("comment 1", user.elementAt(0)),
-        Comment("comment 2", user.elementAt(1)),
-        Comment("comment 3", user.elementAt(2)),
-        Comment("comment 4", user.elementAt(3)),
-        Comment("comment 5", user.elementAt(4)),
-        Comment("comment 6", user.elementAt(5)),
-      ];
-      comment2 = [
-        Comment("comment 5", user.elementAt(4)),
-        Comment("comment 6", user.elementAt(5))];
-      comment3 = [
-        Comment("comment 7", user.elementAt(6))];
-      posts
-          .elementAt(0)
-          .comments = comment1;
-      comment1
-          .elementAt(0)
-          .comments = comment2;
-      comment2
-          .elementAt(0)
-          .comments = comment3;
+      _community=data.community;
+      _mainUser=data.mainUser;
+      posts = data.posts;
+      user = data.user;
     }
   }
 
@@ -105,7 +44,7 @@ class _HomePageState extends State<HomePage> {
       debugShowCheckedModeBanner: false,
       theme: ThemeClass.appTheme,
       home: Scaffold(
-        appBar: widgets.appBar(_user, context),
+        appBar: widgets.appBar(_mainUser, context),
         body: PageView(
           controller: _pageController,
           children: <Widget>[
