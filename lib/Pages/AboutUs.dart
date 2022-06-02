@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ui_flutter/Pages/SettingPage.dart';
 import 'package:ui_flutter/widgets/otherWidget.dart';
 
 import '../config/themeSettings.dart';
@@ -19,7 +20,7 @@ class AboutUs extends StatelessWidget {
         body: Container(
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('assets/images/AboutUs2.jpg'),
+              image: AssetImage(ThemeClass.AboutUs),
               fit: BoxFit.cover,
             ),
           ),
@@ -45,7 +46,7 @@ class AboutUs extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 20.0,
                     fontWeight: FontWeight.bold,
-                    color: Colors.white,
+                    // color: Colors.white,
                   ),
                 ),
               ),
@@ -57,7 +58,7 @@ class AboutUs extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 25.0,
                     fontWeight: FontWeight.w700,
-                    color: Colors.white70,
+                    // color: Colors.white70,
                   ),
                 ),
               ),
@@ -81,7 +82,7 @@ class AboutUs extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 20.0,
                     fontWeight: FontWeight.bold,
-                    color: Colors.white,
+                    // color: Colors.white,
                   ),
                 ),
               ),
@@ -93,7 +94,7 @@ class AboutUs extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 25.0,
                     fontWeight: FontWeight.w700,
-                    color: Colors.white70,
+                    // color: Colors.white70,
                   ),
                 ),
               ),
@@ -163,7 +164,7 @@ our favorite field is machine learning and we hope to create AI projects with ea
               style: TextStyle(
                 fontSize: 20.0,
                 fontWeight: FontWeight.bold,
-                color: Colors.white70,
+                // color: Colors.white70,
               ),
               textAlign: TextAlign.center,
 

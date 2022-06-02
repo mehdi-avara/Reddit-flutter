@@ -39,7 +39,7 @@ class _SettingPageState extends State<SettingPage> {
         body: Container(
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('assets/images/setting.jpg'),
+              image: AssetImage(ThemeClass.ProfileSetting),
               fit: BoxFit.cover,
             ),
           ),
@@ -94,6 +94,7 @@ class _SettingPageState extends State<SettingPage> {
                   },
                 ),
               ),
+
               Container(
                 alignment: Alignment.topLeft,
                 padding: EdgeInsets.all(10),
@@ -104,6 +105,10 @@ class _SettingPageState extends State<SettingPage> {
                     // Navigator.push(context, MaterialPageRoute(builder: (context)=> ChangeTheme()) ); //this is free for set a function
                     setState(() {
                       ThemeClass.changeTheme();
+                      ThemeClass.changeAboutUs();
+                      ThemeClass.changeAddPost();
+                      ThemeClass.changeCommunity();
+                      ThemeClass.changeProfileSetting();
                       Navigator.pushAndRemoveUntil(
                           context,
                           MaterialPageRoute(builder: (context) => HomePage()),
