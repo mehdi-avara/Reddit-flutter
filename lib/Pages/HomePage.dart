@@ -19,8 +19,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  bool showBottomAndAppBar = true;
   final Datas data = Datas();
-  static int index = 0;
+  static int pageIndex = 0;
   List<Community> _community = [];
   User _mainUser;
   List<User> user = [];
@@ -44,19 +45,28 @@ class _HomePageState extends State<HomePage> {
       debugShowCheckedModeBanner: false,
       theme: ThemeClass.appTheme,
       home: Scaffold(
-        appBar: widgets.appBar(_mainUser, context),
+        appBar: showBottomAndAppBar?widgets.appBar(_mainUser, context):null,
         body: PageView(
           controller: _pageController,
           children: <Widget>[
             _feed(posts),
-            _Community(_community)
+            _Community(_community),
+            addPost(),
           ],
           onPageChanged: (num){
-            pageChanged(num);
+            if(num==2){
+              setState((){
+                showBottomAndAppBar = false;
+              });
+            }
+            else {
+              showBottomAndAppBar = true;
+              pageChanged(num);
+            }
           },
 
         ),
-        bottomNavigationBar: bottomNavigationBar(context, _pageController,place),
+        bottomNavigationBar: showBottomAndAppBar?bottomNavigationBar(context, _pageController,place):null,
       ),
     );
   }
@@ -134,12 +144,12 @@ class _HomePageState extends State<HomePage> {
                 (){
                   onTapFunction(place, context, _pageController);
                   if(place<=1) {
-                      index = place;
+                      pageIndex = place;
                   };
          }
          );
       },
-      currentIndex: index,
+      currentIndex: pageIndex,
       showUnselectedLabels: false,
       showSelectedLabels: true,
 
@@ -172,7 +182,7 @@ class _HomePageState extends State<HomePage> {
 
   void pageChanged(int change) {
     setState((){
-      index = change;
+      pageIndex = change;
     });
   }
 
