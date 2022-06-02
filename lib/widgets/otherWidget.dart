@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ui_flutter/Pages/Profile.dart';
 import 'package:ui_flutter/Pages/SettingPage.dart';
 import 'package:ui_flutter/Pages/addPost.dart';
 import 'package:ui_flutter/Pages/communityPage.dart';
@@ -138,7 +139,7 @@ class widgets extends StatelessWidget {
         switch (value) {
           case 1:
             Navigator.push(
-                context, MaterialPageRoute(builder: (context) => SettingPage()));
+                context, MaterialPageRoute(builder: (context) => EditInfo()));
             break;
           case 2:
             Navigator.push(
