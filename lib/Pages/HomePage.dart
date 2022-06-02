@@ -35,17 +35,16 @@ class _HomePageState extends State<HomePage> {
       user = data.user;
     }
   }
-
+  PageController _pageController = PageController(initialPage: 0);
   @override
   Widget build(BuildContext context) {
     int place=0;
-    PageController _pageController = PageController(initialPage: 0);
     return MaterialApp(
       debugShowMaterialGrid: false,
       debugShowCheckedModeBanner: false,
       theme: ThemeClass.appTheme,
       home: Scaffold(
-        appBar: showBottomAndAppBar?widgets.appBar(_mainUser, context):null,
+        appBar: showBottomAndAppBar?widgets.appBar(_mainUser, context):_postAppBar(context),
         body: PageView(
           controller: _pageController,
           children: <Widget>[
@@ -142,7 +141,7 @@ class _HomePageState extends State<HomePage> {
       onTap: (place) {
         setState(
                 (){
-                  onTapFunction(place, context, _pageController);
+                  onTapFunction(place, _pageController);
                   if(place<=1) {
                       pageIndex = place;
                   };
@@ -155,20 +154,25 @@ class _HomePageState extends State<HomePage> {
 
     );
   }
-  static onTapFunction(int mode, BuildContext context,PageController _pageController) {
+  onTapFunction(int mode,PageController _pageController) {
 
     switch (mode) {
       case 0:
-        _pageController.animateToPage(0,
-            duration: Duration(milliseconds: 500), curve: Curves.easeInOut);
+        // _pageController.animateToPage(0,
+        //     duration: Duration(milliseconds: 500), curve: Curves.easeInOut);
+      GoToPage(0);
         break;
       case 1:
-        _pageController.animateToPage(1,
-            duration: Duration(milliseconds: 500), curve: Curves.easeInOut);
+        // _pageController.animateToPage(1,
+        //     duration: Duration(milliseconds: 500), curve: Curves.easeInOut);
+      GoToPage(1);
         break;
       case 2:
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => addPost()));
+        // Navigator.push(
+        //     context, MaterialPageRoute(builder: (context) => addPost()));
+        // _pageController.animateToPage(2,
+        //     duration: Duration(milliseconds: 500), curve: Curves.easeInOut);
+      GoToPage(2);
         break;
       case 3:
       // Navigator.push(context, MaterialPageRoute(builder: (context)=>ChatPage()));
@@ -186,5 +190,38 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+  _postAppBar(BuildContext context){
+    return AppBar(
+      title: Text('Add Post'),
+      backgroundColor:Theme.of(context).appBarTheme.backgroundColor ,
+      leading: IconButton(
+        //create Text icon
+        icon: Icon(Icons.arrow_back),
+        iconSize: 30.0,
+        onPressed: () { //empty space for putting function
+          GoToPage(1);
+        },
+      ),
+      leadingWidth: 50.0,
+      actions: <Widget>[
+        TextButton(
+          child: Text('NEXT'),
+          style: TextButton.styleFrom(
+            primary: Colors.white,
+            backgroundColor: Colors.black,
+            // onSurface: Colors.grey,
+          ),
+          onPressed: () {
+            // Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=> HomePage()), ( route) => false);
+            // Navigator.push(context, MaterialPageRoute(builder: (context)=> HomePage()));
+          },
+        ),
+      ],
+    );
+  }
+  GoToPage(int index){
+    _pageController.animateToPage(index,
+        duration: Duration(milliseconds: 500), curve: Curves.easeInOut);
+  }
 }
 

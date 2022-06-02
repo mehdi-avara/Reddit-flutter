@@ -25,33 +25,6 @@ class _addPostState extends State<addPost> {
       darkTheme: ThemeClass.appTheme,
       home: Scaffold(
 
-        appBar: AppBar(
-          title: Text('Add Post'),
-          backgroundColor:Theme.of(context).appBarTheme.backgroundColor ,
-          leading: IconButton(
-            //create Text icon
-            icon: Icon(Icons.arrow_back),
-            iconSize: 30.0,
-            onPressed: () { //empty space for putting function
-              Navigator.pop(context);
-            },
-          ),
-          leadingWidth: 50.0,
-          actions: <Widget>[
-            TextButton(
-              child: Text('NEXT'),
-              style: TextButton.styleFrom(
-                primary: Colors.white,
-                backgroundColor: Colors.black,
-                // onSurface: Colors.grey,
-              ),
-              onPressed: () {  //empty space for putting function
-                Navigator.pop(context);
-              },
-            ),
-          ],
-        ),
-
     body: SingleChildScrollView(
       child: Container(
         decoration: BoxDecoration(
