@@ -97,6 +97,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    int place=0;
     PageController _pageController = PageController(initialPage: 0);
     return MaterialApp(
       debugShowMaterialGrid: false,
@@ -111,7 +112,7 @@ class _HomePageState extends State<HomePage> {
             _Community(_community)
           ],
         ),
-        bottomNavigationBar: bottomNavigationBar(context, _pageController),
+        bottomNavigationBar: bottomNavigationBar(context, _pageController,place),
       ),
     );
   }
@@ -139,7 +140,16 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
-  BottomNavigationBar bottomNavigationBar(BuildContext context,PageController _pageController) {
+
+  _ff(){
+    return TabBar(tabs: [],
+    onTap: (place){
+      setState((){
+        index = place;
+      });
+    },);
+  }
+  BottomNavigationBar bottomNavigationBar(BuildContext context,PageController _pageController,int place) {
     return BottomNavigationBar(
       type: BottomNavigationBarType.fixed,
       // fixedColor:  ThemeClass.appTheme.primaryColor,
@@ -185,10 +195,12 @@ class _HomePageState extends State<HomePage> {
         ),
       ],
       onTap: (place) {
-        setState((){
+        setState(
+                (){
              onTapFunction(place, context, _pageController);
              index = place;
-         });
+         }
+         );
       },
       currentIndex: index,
       showUnselectedLabels: false,
