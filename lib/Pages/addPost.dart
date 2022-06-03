@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:ui_flutter/Pages/SettingPage.dart';
+import 'package:ui_flutter/models/data.dart';
 import '../config/themeSettings.dart';
-
+import '../models/community.dart';
 class addPost extends StatefulWidget {
   const addPost({Key key}) : super(key: key);
 
@@ -13,8 +14,11 @@ class addPost extends StatefulWidget {
 
 
 class _addPostState extends State<addPost> {
+  Datas data = Datas();
   get body => null;
-
+ String _title;
+  String _description;
+  Community _community;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -76,41 +80,19 @@ class _addPostState extends State<addPost> {
 
     );
   }
-  static PopupMenuButton popUpMenu(BuildContext context) {
+  PopupMenuButton popUpMenu(BuildContext context) {
     return PopupMenuButton<int>(
       icon: Icon(Icons.list),
-      itemBuilder: (context) => [
-        PopupMenuItem(
-          value: 1,
-          child: ListTile(
-            title: Text('Item 1 child'),
-            subtitle: Text('Details goes here'),
-          ),
+      itemBuilder: (context) => data.community
+          .map((item) => PopupMenuItem<int>(
+        value: item.id,
+        child: Text(
+          item.name,
         ),
-        PopupMenuItem(
-          value: 2,
-          child: ListTile(
-            title: Text('Item 2 child'),
-            subtitle: Text('Details goes here'),
-          ),
-        ),
-        PopupMenuItem(
-          value: 3,
-          child: ListTile(
-            title: Text('Item 3 child'),
-            subtitle: Text('Details goes here'),
-    )
-        ),
-      ],
+      ))
+          .toList(),
       onSelected: (value) {
-        switch (value) {
-          case 1:
-            break;
-          case 2:
-            break;
-          case 3:
-            break;
-        }
+        print(value);
       },
     );
   }
