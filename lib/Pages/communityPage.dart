@@ -45,7 +45,7 @@ class _communityPageState extends State<communityPage> {
       theme: ThemeClass.appTheme,
       darkTheme: ThemeClass.appTheme,
       home: Scaffold(
-        appBar: widgets.appBar(_user, context),
+        // appBar: widgets.appBar(_user, context),
         body: Center(
         child: ListView.builder(
             itemCount: _community.length,
