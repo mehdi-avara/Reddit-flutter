@@ -40,6 +40,10 @@ class Datas{
     _posts = [
       Post.text("0", "example 1", "discribed1", _user.elementAt(0),
           Community("community 1")),
+      Post.text("0", "example 1", "discribed1", _user.elementAt(0),
+          Community("community 1")),
+      Post.text("0", "example 1", "discribed1", _user.elementAt(0),
+          Community("community 1")),
       Post.text("1", "example 2", "discribed2", _user.elementAt(1),
           Community("community 2")),
       Post.text("2", "example 3", "discribed3", _user.elementAt(2),
