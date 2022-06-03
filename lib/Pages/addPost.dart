@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:ui_flutter/Pages/HomePage.dart';
 import 'package:ui_flutter/Pages/SettingPage.dart';
 import 'package:ui_flutter/models/data.dart';
 import '../config/themeSettings.dart';
@@ -19,6 +20,7 @@ class _addPostState extends State<addPost> {
  String _title;
   String _description;
   Community _community;
+  int communityId;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -58,6 +60,9 @@ class _addPostState extends State<addPost> {
                                 borderRadius: BorderRadius.circular(20.0)
                             )
                         ),
+                        onChanged: (value){
+                          _title=value;
+                        },
                       ),
                       subtitle: Padding(
                         padding: const EdgeInsets.only(top: 30.0, bottom: 60.0, left: 0.0, right: 0.0),
@@ -68,8 +73,23 @@ class _addPostState extends State<addPost> {
                               hintText: 'Add a Description',
                               border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(20.0))),
+                          onChanged: (value){
+                            _description=value;
+                          }
                         ),
                       ),
+                    ),
+                    TextButton(onPressed: (){
+                      if(_title!=null && _description!=null){
+                        data.addPostWithTitle(_title,_description,_community);
+                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>HomePage()));
+
+                      }
+                      else{
+                        print('Please fill all the fields');
+                      }
+                    },
+                      child: Text('Add Post',style: TextStyle(fontSize: 20.0,fontWeight: FontWeight.bold),),
                     ),
                   ],
                 ),
@@ -92,7 +112,9 @@ class _addPostState extends State<addPost> {
       ))
           .toList(),
       onSelected: (value) {
-        print(value);
+        setState(() {
+          _community = data.community.firstWhere((item) => item.id == value);
+        });
       },
     );
   }

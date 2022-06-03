@@ -1,3 +1,4 @@
+import 'package:ui_flutter/Pages/addPost.dart';
 import 'package:ui_flutter/models/comment.dart';
 import 'package:ui_flutter/models/community.dart';
 import 'package:ui_flutter/models/post.dart';
@@ -123,5 +124,12 @@ class Datas{
 
   set mainUser(User value) {
     _mainUser = value;
+  }
+  void addPost(Post post){
+    _posts.add(post);
+  }
+  void addPostWithTitle(String title, String description, Community community){
+        _posts.add(Post.text(title, description, "discribed1", _mainUser, community));
+
   }
 }

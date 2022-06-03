@@ -208,20 +208,6 @@ class _HomePageState extends State<HomePage> {
         },
       ),
       leadingWidth: 50.0,
-      actions: <Widget>[
-        TextButton(
-          child: Text('NEXT'),
-          style: TextButton.styleFrom(
-            primary: Colors.white,
-            backgroundColor: Colors.black,
-            // onSurface: Colors.grey,
-          ),
-          onPressed: () {
-            // Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=> HomePage()), ( route) => false);
-            // Navigator.push(context, MaterialPageRoute(builder: (context)=> HomePage()));
-          },
-        ),
-      ],
     );
   }
   GoToPage(int index){
