@@ -21,6 +21,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  bool _isSearching = false;
+  List<Post> _searchResult = [];
   bool showBottomAndAppBar = true;
   final Datas data = Datas();
   static int pageIndex = 0;
@@ -51,7 +53,7 @@ class _HomePageState extends State<HomePage> {
         body: PageView(
           controller: _pageController,
           children: <Widget>[
-            _feed(posts),
+            _feed(_isSearching?_searchResult:posts),
             _Community(_community),
             addPost(),
           ],
@@ -89,9 +91,9 @@ class _HomePageState extends State<HomePage> {
       child: ListView.builder(
         shrinkWrap: true,
         physics: ClampingScrollPhysics(),
-        itemCount: posts.length,
+        itemCount: _posts.length,
         itemBuilder: (context, index) {
-          return feedWidget(posts[index]);
+          return feedWidget(_posts[index]);
         },
       ),
     );
@@ -234,7 +236,11 @@ class _HomePageState extends State<HomePage> {
           child: Image.asset(_user.profileImageUrl),
         ),
         title: TextField(
-          controller: _searchController,
+          // controller: _searchController,
+          onChanged: (value) {
+              search(value);
+              _searchController.text = value;
+          },
           decoration: InputDecoration(
             hintText: "Search",
             hintStyle: TextStyle(
@@ -243,7 +249,11 @@ class _HomePageState extends State<HomePage> {
             border: InputBorder.none,
             suffixIcon: IconButton(
               icon: Icon(Icons.search),
-              onPressed: () {},
+              onPressed: () {
+                setState(() {
+                  search(_searchController.text);
+                });
+              },
             ),
           ),
         ),
@@ -285,6 +295,25 @@ class _HomePageState extends State<HomePage> {
         }
       },
     );
+  }
+
+  void search(String value) {
+    setState(() {
+    if (value.isEmpty) {
+
+        _searchResult.clear();
+        _isSearching = false;
+    } else {
+
+      _isSearching = true;
+      _searchResult.clear();
+      for (int i = 0; i < posts.length; i++) {
+        if (posts[i].title.toLowerCase().contains(value.toLowerCase())) {
+          _searchResult.add(posts[i]);
+        }
+      }
+    }
+  });
   }
 
 }
