@@ -55,7 +55,7 @@ class _HomePageState extends State<HomePage> {
           children: <Widget>[
             _feed(_isSearching?_searchResult:posts),
             _Community(_community),
-            addPost(),
+            addPost(addToPost: addToPost),
           ],
           onPageChanged: (num){
             if(num==2){
@@ -130,18 +130,18 @@ class _HomePageState extends State<HomePage> {
           ),
           label: 'Add',
         ),
-        BottomNavigationBarItem(
-          icon: Icon(
-            Icons.chat,
-          ),
-          label: 'Chat',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(
-            Icons.notifications,
-          ),
-          label: 'Notifications',
-        ),
+        // BottomNavigationBarItem(
+        //   icon: Icon(
+        //     Icons.chat,
+        //   ),
+        //   label: 'Chat',
+        // ),
+        // BottomNavigationBarItem(
+        //   icon: Icon(
+        //     Icons.notifications,
+        //   ),
+        //   label: 'Notifications',
+        // ),
       ],
       onTap: (place) {
         setState(
@@ -154,7 +154,7 @@ class _HomePageState extends State<HomePage> {
          );
       },
       currentIndex: pageIndex,
-      showUnselectedLabels: false,
+      showUnselectedLabels: true,
       showSelectedLabels: true,
 
     );
@@ -301,6 +301,13 @@ class _HomePageState extends State<HomePage> {
     }
   });
   }
+addToPost(String title,String description,Community community){
+  data.addPostWithTitle(title,description,community);
+  setState(() {
+    posts = data.posts;
+    GoToPage(0);
+  });
 
+}
 }
 

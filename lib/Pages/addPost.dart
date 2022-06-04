@@ -6,8 +6,8 @@ import 'package:ui_flutter/models/data.dart';
 import '../config/themeSettings.dart';
 import '../models/community.dart';
 class addPost extends StatefulWidget {
-  const addPost({Key key}) : super(key: key);
-
+  const addPost({Key key, this.addToPost}) : super(key: key);
+  final Function addToPost;
   @override
   State<addPost> createState() => _addPostState();
 }
@@ -21,6 +21,7 @@ class _addPostState extends State<addPost> {
   String _description;
   Community _community;
   int communityId;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -81,9 +82,8 @@ class _addPostState extends State<addPost> {
                     ),
                     TextButton(onPressed: (){
                       if(_title!=null && _description!=null){
-                        data.addPostWithTitle(_title,_description,_community);
-                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>HomePage()));
-
+                        widget.addToPost(_title,_description,_community);
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>HomePage()));
                       }
                       else{
                         print('Please fill all the fields');

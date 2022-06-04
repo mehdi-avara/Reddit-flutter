@@ -129,7 +129,8 @@ class Datas{
     _posts.add(post);
   }
   void addPostWithTitle(String title, String description, Community community){
-        _posts.add(Post.text(title, description, "discribed1", _mainUser, community));
+        _posts.add(Post.text("id",title, description, _mainUser, community));
+        print("object");
 
   }
 }
