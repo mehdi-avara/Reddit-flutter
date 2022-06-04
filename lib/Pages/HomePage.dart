@@ -219,8 +219,11 @@ class _HomePageState extends State<HomePage> {
       title: ListTile(
         leading: CircleAvatar(
           radius: themeSizes.avatarRadius,
-          child: Image.asset(_user.profileImageUrl),
-        ),
+          child:ClipRRect(
+        borderRadius: BorderRadius.circular(40),
+    child: Image.asset(_user.profileImageUrl),
+
+        ),  ),
         title: TextField(
           // controller: _searchController,
           onChanged: (value) {
