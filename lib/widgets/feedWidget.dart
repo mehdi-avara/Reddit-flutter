@@ -122,11 +122,6 @@ class feedWidget extends StatelessWidget {
                     iconSize: 15,),
                   Text("share",style: TextStyle(
                       fontSize: 10),),
-                  IconButton(
-                    icon:Icon(Icons.print,
-                    ),
-                    onPressed: (){},
-                    iconSize: 15,)
                 ],
               ),
             ),
