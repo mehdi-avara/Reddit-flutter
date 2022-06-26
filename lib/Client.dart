@@ -2,9 +2,9 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 
-class App extends StatelessWidget{
+class Apppp extends StatelessWidget{
   static final String ip = '172.20.177.53';
-  static final int port = 1111;
+  static final int port = 8080;
 
 
 
@@ -73,16 +73,22 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
   Future<String> _sendMessage() async {
+    
     if(_controller.text.isNotEmpty){
-      await Socket.connect(App.ip, App.port).then((serverSocket) {
+      await Socket.connect(Apppp.ip, Apppp.port).then((serverSocket) {
         print('connected to server');
         serverSocket.write(_controller.text);
+        var x = new StringBuffer();
+        x.writeCharCode(0);
+        serverSocket.write(x.toString());
         serverSocket.flush();
         print('write is done');
         serverSocket.listen((socket){
-          MyHomePage.show = String.fromCharCodes(socket).trim().substring(2);
+          MyHomePage.show = String.fromCharCodes(socket).trim();
+
+        // print("ans is" + String.fromCharCodes(socket).trim());
+
           setState(() {});
-          print('show is ' + MyHomePage.show);
         });
       });
     }
