@@ -5,6 +5,7 @@ import 'package:ui_flutter/models/post.dart';
 import 'package:ui_flutter/models/user.dart';
 
 class Datas{
+  static String UserId;
   User _mainUser = User.withProfileImageUrl("Sourav", "assets/images/profile.jpg");
 
   List<Community> _community = [

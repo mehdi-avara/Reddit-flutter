@@ -1,5 +1,6 @@
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:ui_flutter/Client.dart';
 import 'package:ui_flutter/config/themeSettings.dart';
 class LoginSignupScreen extends StatefulWidget {
   @override
@@ -10,10 +11,21 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
   bool isSignupScreen = true;
   bool isMale = true;
   bool isRememberMe = false;
-
+  bool isError = false;
+  String errorMessage = "";
+  String email = "";
+  String password = "";
+  String userName = "";
+  TextEditingController usernameController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return MaterialApp(
+      debugShowMaterialGrid: false,
+      debugShowCheckedModeBanner: false,
+      theme: ThemeClass.changeThemeToLight(),
+      home:Scaffold(
       backgroundColor: Palette.homeWidgetBackground,
       body: Stack(
         children: [
@@ -101,7 +113,7 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
                         GestureDetector(
                           onTap: () {
                             setState(() {
-                              isSignupScreen = false;
+                              isSignupScreen = !isSignupScreen;
                             });
                           },
                           child: Column(
@@ -188,6 +200,7 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
           )
         ],
       ),
+    ),
     );
   }
 
@@ -196,9 +209,29 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
       margin: EdgeInsets.only(top: 20),
       child: Column(
         children: [
-          buildTextField(Icons.mail_outline, "info@demouri.com", false, true),
-          buildTextField(
-              MaterialCommunityIcons.lock_outline, "**********", true, false),
+          // buildTextField(Icons.mail_outline,"info@demouri.com", false, true,),
+          TextField(
+            controller: emailController,
+            decoration: InputDecoration(
+                hintText: "Email",
+                prefixIcon: Icon(Icons.mail_outline),
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10))),
+            
+          ),
+          // buildTextField(MaterialCommunityIcons.lock_outline, "**********", true, false),
+          TextField(
+            
+            controller: passwordController,
+            obscureText: true,
+            decoration: InputDecoration(
+              
+                hintText: "Password",
+                focusColor: Colors.black,
+                prefixIcon: Icon(MaterialCommunityIcons.lock_outline),
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10))),
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -223,7 +256,11 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
                     style: TextStyle(fontSize: 12, color: Palette.textColor1)),
               )
             ],
-          )
+          ),
+          isError?Center(
+            child: Text(errorMessage,
+                style: TextStyle(fontSize: 12, color: Colors.red)),
+          ):Container(),
         ],
       ),
     );
@@ -234,12 +271,38 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
       margin: EdgeInsets.only(top: 20),
       child: Column(
         children: [
-          buildTextField(MaterialCommunityIcons.account_outline, "User Name",
-              false, false),
-          buildTextField(
-              MaterialCommunityIcons.email_outline, "email", false, true),
-          buildTextField(
-              MaterialCommunityIcons.lock_outline, "password", true, false),
+          // buildTextField(MaterialCommunityIcons.account_outline, "User Name",false, false),
+          TextField(
+            controller: usernameController,
+            decoration: InputDecoration(
+                hintText: "Username",
+                prefixIcon: Icon(MaterialCommunityIcons.account_outline),
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10))),
+          ),
+          // buildTextField(MaterialCommunityIcons.email_outline, "email", false, true),
+          TextField(
+            controller: emailController,
+            decoration: InputDecoration(
+                hintText: "Email",
+                prefixIcon: Icon(Icons.mail_outline),
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10))),
+          ),
+          // buildTextField(MaterialCommunityIcons.lock_outline, "password", true, false),
+          TextField(
+            controller: passwordController,
+            obscureText: true,
+            decoration: InputDecoration(
+                hintText: "Password",
+                prefixIcon: Icon(MaterialCommunityIcons.lock_outline),
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10))),
+          ),
+          isError?Center(
+            child: Text(errorMessage,
+                style: TextStyle(fontSize: 12, color: Colors.red)),
+          ):Container(),
           Padding(
             padding: const EdgeInsets.only(top: 10, left: 10),
             child: Row(
@@ -343,6 +406,7 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
   TextButton buildTextButton(
       IconData icon, String title, Color backgroundColor) {
     return TextButton(
+
       onPressed: () {},
       style: TextButton.styleFrom(
           side: BorderSide(width: 1, color: Colors.grey),
@@ -351,6 +415,7 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
           RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
           primary: Colors.white,
           backgroundColor: backgroundColor),
+      
       child: Row(
         children: [
           Icon(
@@ -364,17 +429,29 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
           )
         ],
       ),
+
     );
   }
 
   Widget buildBottomHalfContainer(bool showShadow) {
     return AnimatedPositioned(
+
       duration: Duration(milliseconds: 700),
       curve: Curves.bounceInOut,
       top: isSignupScreen ? 535 : 430,
       right: 0,
       left: 0,
-      child: Center(
+      child:GestureDetector(
+        onTap: (){
+          setState(() {
+              userName = usernameController.text;
+              email = emailController.text;
+              password = passwordController.text;
+              connector.sendMessage("signUp "+email+" "+ userName +" "+password +" ").then((value) => errorMessage = value);
+              isError = true;
+          });
+        },
+        child: Center(
         child: Container(
           height: 90,
           width: 90,
@@ -412,6 +489,7 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
           )
               : Center(),
         ),
+      ),
       ),
     );
   }

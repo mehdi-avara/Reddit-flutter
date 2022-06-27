@@ -96,3 +96,29 @@ class _MyHomePageState extends State<MyHomePage> {
     return MyHomePage.show;
   }
 }
+class connector{
+  static final String ip = '172.20.177.53';
+  static final int port = 8080;
+  static  Future<String> sendMessage(String message)async {
+    
+    if(!message.isEmpty){
+      await Socket.connect(Apppp.ip, Apppp.port).then((serverSocket) {
+        print('connected to server');
+        serverSocket.write(message);
+        var x = new StringBuffer();
+        x.writeCharCode(0);
+        serverSocket.write(x.toString());
+        serverSocket.flush();
+        
+        print('write is done');
+        serverSocket.listen((socket){
+          var holder = String.fromCharCodes(socket).trim();
+          print(holder);
+          return holder;
+        });
+      });
+    }
+
+    return MyHomePage.show;
+  }
+}
