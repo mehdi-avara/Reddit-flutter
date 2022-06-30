@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 
 class Apppp extends StatelessWidget{
-  static final String ip = '172.20.177.53';
+  static final String ip = '192.168.226.130';
   static final int port = 8080;
 
 
@@ -100,7 +100,7 @@ class connector{
   static final String ip = '172.20.177.53';
   static final int port = 8080;
   static  Future<String> sendMessage(String message)async {
-    
+    String holder;
     if(!message.isEmpty){
       await Socket.connect(Apppp.ip, Apppp.port).then((serverSocket) {
         print('connected to server');
@@ -109,16 +109,13 @@ class connector{
         x.writeCharCode(0);
         serverSocket.write(x.toString());
         serverSocket.flush();
-        
-        print('write is done');
         serverSocket.listen((socket){
-          var holder = String.fromCharCodes(socket).trim();
-          print(holder);
-          return holder;
+           holder= String.fromCharCodes(socket).trim();
+            print(holder);
+            return holder;
         });
       });
     }
 
-    return MyHomePage.show;
   }
 }

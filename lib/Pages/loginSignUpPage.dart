@@ -2,6 +2,10 @@ import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:ui_flutter/Client.dart';
 import 'package:ui_flutter/config/themeSettings.dart';
+import 'package:ui_flutter/models/data.dart';
+
+import '../models/user.dart';
+import 'HomePage.dart';
 class LoginSignupScreen extends StatefulWidget {
   @override
   _LoginSignupScreenState createState() => _LoginSignupScreenState();
@@ -443,13 +447,24 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
       left: 0,
       child:GestureDetector(
         onTap: (){
-          setState(() {
               userName = usernameController.text;
               email = emailController.text;
               password = passwordController.text;
-              connector.sendMessage("signUp "+email+" "+ userName +" "+password +" ").then((value) => errorMessage = value);
-              isError = true;
-          });
+               connector.sendMessage("signUp "+email+" "+ userName +" "+password +" ").then((value){
+                
+                if(value.split(" ")[0]=="success"){
+                Datas.userId = value.split(" ")[1];
+                print(Datas.userId);
+                Datas.mainUserSet( User.withProfileImageUrl(userName, "assets/images/profile.jpg"));
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePage()));
+                return;
+              }else{
+              setState((){
+                  isError = true;
+                  errorMessage = value;
+                  });
+              }
+              });
         },
         child: Center(
         child: Container(
